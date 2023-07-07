@@ -1,0 +1,79 @@
+/* Styles for the ticket form */
+.ticket-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.ticket-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.ticket-form input[type="text"],
+.ticket-form input[type="date"],
+.ticket-form input[type="tel"],
+.ticket-form input[type="email"],
+.ticket-form input[type="url"],
+.ticket-form input[type="number"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.ticket-form .ticket-options {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ticket-form .ticket-options label {
+  margin-right: 10px;
+}
+
+.ticket-form .ticket-options .ticket-btn {
+  padding: 5px 8px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ticket-form .ticket-options input[type="text"] {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+.ticket-form input[type="submit"] {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ticket-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Centering the ticket form on the page */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f1f1f1;
+}

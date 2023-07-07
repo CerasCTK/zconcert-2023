@@ -1,0 +1,75 @@
+#intro-navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 3rem;
+}
+
+#intro-navbar ul li {
+  display: inline-block;
+  padding: 0 2rem;
+}
+
+#intro-navbar ul li:first-child {
+  font-size: 2rem;
+  font-family: plank;
+  border-radius: 30px;
+  margin-right: 51rem;
+  margin-left: 2rem;
+  padding: 0.8rem;
+}
+
+#intro-navbar .nav-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: rgb(50, 40, 48);
+  text-transform: uppercase;
+}
+
+#intro {
+  height: 100vh;
+  width: 100%;
+  background-image: url(assets/img/background/bg-introduce.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  object-fit: cover;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.intro-content {
+  color: rgb(50, 40, 48);
+}
+.intro-content .masthead-heading {
+  font-size: 7rem;
+  font-weight: 900;
+}
+.intro-content .masthead-script {
+  margin: 2rem 0 9rem 0;
+  letter-spacing: 0.08rem;
+  font-weight: lighter;
+  font-size: 1.8rem;
+}
+.intro-content .ticket-order-button {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  border-radius: 40px;
+  background: rgb(50, 40, 48);
+  padding: 1.2rem 1.2rem;
+  box-shadow: 5px 7px rgb(253, 156, 209);
+}
+
+#history {
+  padding-bottom: 2000px;
+}
