@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="../favicon.ico" />
     <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/font.css" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,14 +13,21 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Z Concert 2023</title>
   </head>
   <body>
+    <!-- Navigation bar -->
     <nav id="intro-navbar">
       <div class="nav-list">
         <div class="left">
           <div class="nav-item">
-            <a class="nav-link" href="#brand">Futuristic</a>
+            <a class="nav-link" href="#intro">Futuristic</a>
           </div>
         </div>
         <div class="right">
@@ -28,7 +35,7 @@
             <a class="nav-link" href="#history">Tiểu sử</a>
           </div>
           <div class="nav-item">
-            <a class="nav-link" href="#vocalist">Nghệ sỹ</a>
+            <a class="nav-link" href="#vocal">Nghệ sỹ</a>
           </div>
           <div class="nav-item">
             <a class="nav-link" href="#order">Đặt vé</a>
@@ -39,22 +46,247 @@
         </div>
       </div>
     </nav>
+
     <!-- Section Introduce -->
     <section id="intro">
-      <div class="intro-content">
+      <div class="intro-container">
         <div class="masthead-heading">ZCONCERT <br />2023</div>
         <div class="masthead-script">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed <br />
           diam nonummy nibh euismod tincidunt.
         </div>
-          <a href="#" class="ticket-order-button">Đặt vé ngay</a>
-        </div>
+        <a href="#" class="ticket-order-button">Đặt vé ngay</a>
       </div>
     </section>
 
     <!-- Section History -->
     <section id="history">
-      <p>hi</p>
+      <div class="history-container">
+        <h2>TIỂU SỬ DỰ ÁN</h2>
+        <div class="his-list">
+          <div class="his-item">
+            <img
+              src="./assets/img/background/avatar-his20.jpg"
+              alt="ZCONCERT 2020"
+            />
+            <span
+              >ZCONCERT <br />
+              2020</span
+            >
+          </div>
+          <div class="his-item">
+            <img
+              src="./assets/img/background/avatar-his22.jpg"
+              alt="ZCONCERT 2022"
+            />
+            <span
+              >ZCONCERT <br />
+              2022</span
+            >
+          </div>
+          <div class="his-item">
+            <img
+              src="./assets/img/background/avatar-his23.jpg"
+              alt="ZCONCERT 2023"
+            />
+            <span
+              >ZCONCERT <br />
+              2023</span
+            >
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- Section Vocal -->
+    <section id="vocal">
+      <div class="vocal-container">
+        <h2>NGHỆ SỸ</h2>
+        <h4>Z CONCERT 2023</h4>
+        <div class="vocal-list">
+          <div class="vocal-item">
+            <img src="./assets/img/vocal/HoangDung.jpg" alt="Hoàng Dũng" />
+          </div>
+
+          <div class="vocal-item">
+            <img
+              src="./assets/img/vocal/unpublic-vocal.png"
+              alt="Unpublic-vocal"
+            />
+          </div>
+          <div class="vocal-item">
+            <img
+              src="./assets/img/vocal/unpublic-vocal.png"
+              alt="Unpublic-vocal"
+            />
+          </div>
+          <div class="vocal-item">
+            <img
+              src="./assets/img/vocal/unpublic-vocal.png"
+              alt="Unpublic-vocal"
+            />
+          </div>
+          <div class="vocal-item">
+            <img
+              src="./assets/img/vocal/unpublic-vocal.png"
+              alt="Unpublic-vocal"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Order -->
+    <section id="order">
+      <div class="order-container">
+        <h2>VÉ REGULAR</h2>
+        <div class="main">
+          <!-- Ticket info -->
+          <div class="left">
+            <img src="./assets/img/vocal/unpublic-vocal.png" alt="image" />
+          </div>
+          <!-- Form apply -->
+          <div class="right">
+            <form>
+              <label for="fName">HỌ VÀ TÊN (FULL NAME):</label><br />
+              <input
+                type="text"
+                name="fName"
+                id="fName"
+                placeholder="Nguyễn Văn A"
+                pattern="[A-Za-zÀ-Ỹà-ỹ\s]+"
+                required
+                onfocus="clearPlaceholder(this)"
+              />
+              <br />
+              <label for="phoneNumber">SỐ ĐIỆN THOẠI (PHONE NUMBER):</label
+              ><br />
+              <input
+                type="tel"
+                id="phoneNumber"
+                name="phoneNumber"
+                placeholder="0123456789"
+                pattern="[0-9]{10}"
+                required
+                onfocus="clearPlaceholder(this)"
+              />
+              <br />
+              <label for="email"> EMAIL:</label><br />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@gmail.com"
+                required
+                onfocus="clearPlaceholder(this)"
+              /><br />
+              <label for="facebook">LINK FACEBOOK CÁ NHÂN:</label>
+              <input
+                type="url"
+                id="facebook"
+                name="facebook"
+                placeholder="Facebook Address"
+                required
+                onfocus="clearPlaceholder(this)"
+              />
+              <label for="ticketInfo">THÔNG TIN ĐẶT VÉ (TICKET):</label><br />
+              <div class="ticket-options">
+                <label for="jasmineTickets">Jasmine:</label>
+                <div class="ticket-controls">
+                  <button
+                    type="button"
+                    class="ticket-btn"
+                    onclick="decrementTicket('jasmineTickets')"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="text"
+                    id="jasmineTickets"
+                    name="jasmineTickets"
+                    min="0"
+                    value="0"
+                    readonly
+                  />
+                  <button
+                    type="button"
+                    class="ticket-btn"
+                    onclick="incrementTicket('jasmineTickets')"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <div class="ticket-options">
+                <label for="irisTickets">Iris:</label>
+                <div class="ticket-controls">
+                  <button
+                    type="button"
+                    class="ticket-btn"
+                    onclick="decrementTicket('irisTickets')"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="text"
+                    id="irisTickets"
+                    name="irisTickets"
+                    min="0"
+                    value="0"
+                    readonly
+                  />
+                  <button
+                    type="button"
+                    class="ticket-btn"
+                    onclick="incrementTicket('irisTickets')"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <div class="ticket-options">
+                <label for="lotusTickets">Lotus:</label>
+                <div class="ticket-controls">
+                  <button
+                    type="button"
+                    class="ticket-btn"
+                    onclick="decrementTicket('lotusTickets')"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="text"
+                    id="lotusTickets"
+                    name="lotusTickets"
+                    min="0"
+                    value="0"
+                    readonly
+                  />
+                  <button
+                    type="button"
+                    class="ticket-btn"
+                    onclick="incrementTicket('lotusTickets')"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <input type="submit" value="Đăng ký" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact"></section>
+
+    <!-- Footer -->
+
+    <!-- Javascript embeded -->
+    <script src="app.js"></script>
   </body>
 </html>

@@ -1,37 +1,52 @@
+* {
+  scroll-behavior: smooth;
+  /* color: rgb(50, 40, 48); */
+  color: rgb(70, 40, 48);
+}
+
+/* Scroll navbar background */
+.bg-scroll-navbar {
+  background-color: rgba(250, 201, 225, 0.7);
+}
+
+/* Navbar */
 #intro-navbar {
   position: fixed;
   width: 100%;
   top: 0;
+  transition: background-color 150ms ease-in-out;
 }
 
 .nav-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 3rem;
+  padding: 1.5rem;
 }
 
-#intro-navbar ul li {
-  display: inline-block;
-  padding: 0 2rem;
-}
-
-#intro-navbar ul li:first-child {
-  font-size: 2rem;
-  font-family: plank;
-  border-radius: 30px;
-  margin-right: 51rem;
-  margin-left: 2rem;
-  padding: 0.8rem;
+.nav-list .right {
+  display: flex;
 }
 
 #intro-navbar .nav-link {
   text-decoration: none;
-  font-weight: 600;
-  color: rgb(50, 40, 48);
+  font-weight: 200;
   text-transform: uppercase;
 }
+.left .nav-link {
+  font-family: "plank";
+  font-size: 2rem;
+}
 
+.right .nav-link {
+  font-family: "montserrat_bold";
+}
+
+.right .nav-item:not(:last-child) {
+  margin-right: 3rem;
+}
+
+/* Introduce */
 #intro {
   height: 100vh;
   width: 100%;
@@ -41,35 +56,153 @@
   background-position: center center;
   background-size: cover;
   object-fit: cover;
-  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   align-items: center;
 }
 
-.intro-content {
-  color: rgb(50, 40, 48);
+.intro-container {
+  margin-left: 1.5rem;
 }
-.intro-content .masthead-heading {
+
+.intro-container .masthead-heading {
   font-size: 7rem;
   font-weight: 900;
+  font-family: "monument_ultra";
 }
-.intro-content .masthead-script {
+
+.intro-container .masthead-script {
   margin: 2rem 0 9rem 0;
   letter-spacing: 0.08rem;
   font-weight: lighter;
   font-size: 1.8rem;
+  font-family: montserrat_reg;
 }
-.intro-content .ticket-order-button {
+
+.intro-container .ticket-order-button {
   text-decoration: none;
   color: white;
   font-size: 1.5rem;
   font-weight: bolder;
+  font-family: montserrat_bold;
   border-radius: 40px;
   background: rgb(50, 40, 48);
   padding: 1.2rem 1.2rem;
   box-shadow: 5px 7px rgb(253, 156, 209);
 }
 
+/* Section History */
 #history {
-  padding-bottom: 2000px;
+  background-image: url(./assets/img/background/bg-history.jpg);
+  background-size: cover;
 }
+
+.history-container {
+  text-align: center;
+  font-family: montserrat_bold;
+  font-weight: 800;
+  padding: 1.5rem;
+}
+
+.his-list {
+  display: flex;
+  padding: 2rem 0;
+}
+
+.his-item {
+  display: flex;
+  flex-direction: column;
+  width: 33.333333%;
+}
+
+.his-item img {
+  width: 50%;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.his-item span {
+  margin-top: 2rem;
+}
+
+/* Section Vocal */
+#vocal {
+  background-image: url(./assets/img/background/bg-vocalist.jpg);
+  background-size: cover;
+}
+
+.vocal-container {
+  text-align: center;
+  font-family: montserrat_bold;
+  padding: 1.5rem;
+}
+
+.vocal-container h2 {
+  font-family: montserrat_extra;
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.vocal-container h4 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.vocal-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.vocal-item {
+  width: 33.33%;
+}
+
+.vocal-item:nth-child(4),
+.vocal-item:nth-child(5) {
+  width: 50%;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.vocal-item img {
+  width: 14rem;
+  height: auto;
+  border-radius: 1rem;
+}
+
+/* Section Order */
+#order {
+  background-image: url(./assets/img/background/bg-order-ticket.jpg);
+  background-size: cover;
+}
+
+.order-container {
+  padding: 1.5rem;
+}
+
+.order-container h2 {
+  font-family: montserrat_extra;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.order-container-content {
+  display: flex;
+}
+
+.order-container .left {
+  width: 50%;
+}
+
+.order-container .right {
+  width: 50%;
+  font-family: "montserrat_bold";
+}
+
+/* Section Contact */
+#contact {
+  background-image: url(./assets/img/background/bg-contact.jpg);
+  background-size: cover;
+}
+/* Footer */
