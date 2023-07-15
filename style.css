@@ -40,6 +40,7 @@
 
 .right .nav-link {
   font-family: "montserrat_bold";
+  transition: ;
 }
 
 .right .nav-item:not(:last-child) {
@@ -155,20 +156,25 @@
 }
 
 .vocal-item {
-  width: 33.33%;
+  width: 30%;
+  /* width: 25.8%; */
 }
 
 .vocal-item:nth-child(4),
-.vocal-item:nth-child(5) {
-  width: 50%;
+.vocal-item:nth-child(5),
+.vocal-item:nth-child(6) {
   margin-top: 2rem;
   padding-bottom: 2rem;
 }
 
 .vocal-item img {
   width: 14rem;
-  height: auto;
   border-radius: 1rem;
+  transition: width 1.25s, height 1.25s;
+}
+
+.vocal-item img:hover {
+  width: 20rem;
 }
 
 /* Section Order */
@@ -191,11 +197,11 @@
   display: flex;
 }
 
-.order-container .left {
+.order-container-content .left {
   width: 50%;
 }
 
-.order-container .right {
+.order-container-content .right {
   width: 50%;
   font-family: "montserrat_bold";
 }
