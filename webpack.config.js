@@ -47,7 +47,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g)$/i,
+        test: /\.(png|jpe?g|webp)$/i,
         type: "asset/resource",
         use: [
           {
