@@ -1,0 +1,10 @@
+{
+  "name": "zconcert-2023",
+  "version": "1.0.0",
+  "description": "Landing website for ZConcert 2023",
+  "main": "app.js",
+  "scripts": {
+  },
+  "author": "Ceras",
+  "license": "ISC"
+}
