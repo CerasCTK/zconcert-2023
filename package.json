@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Landing website for ZConcert 2023",
   "main": "app.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Ceras",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.88.2"
+  }
 }
