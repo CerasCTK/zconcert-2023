@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Landing website for ZConcert 2023",
   "main": "app.js",
-  "scripts": {},
+  "scripts": {
+    "build": "rimraf dist && webpack"
+  },
   "author": "Ceras",
   "license": "ISC",
   "devDependencies": {
+    "rimraf": "^5.0.1",
     "webpack": "^5.88.2"
   }
 }
