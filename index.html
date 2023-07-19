@@ -38,7 +38,7 @@
             <a class="nav-link" href="#vocal">Nghệ sỹ</a>
           </div>
           <div class="nav-item">
-            <a class="nav-link" href="#order">Đặt vé</a>
+            <a class="nav-link" href="#ticket-info">Đặt vé</a>
           </div>
           <div class="nav-item">
             <a class="nav-link" href="#contact">Liên hệ</a>
@@ -55,7 +55,7 @@
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed <br />
           diam nonummy nibh euismod tincidunt.
         </div>
-        <a href="#order" class="ticket-order-button">Đặt vé ngay</a>
+        <a href="#ticket-info" class="ticket-order-button">Đặt vé ngay</a>
       </div>
     </section>
 
@@ -167,118 +167,103 @@
       </div>
     </section>
 
-    <!-- Section Order -->
-    <section id="order">
-      <div class="order-container">
+    <!-- Section Ticket Info -->
+    <section id="ticket-info">
+      <div class="ticket-info-container">
         <h2>VÉ REGULAR</h2>
-        <div class="order-container-content">
-          <!-- Ticket info -->
-          <div class="left">
-            <img src="./assets/img/vocal/unpublic-vocal.png" alt="image" />
+        <!-- Price table for ticket -->
+        <div class="top">
+          <div class="top-container">
+            <table>
+              <tr>
+                <th>HẠNG VÉ</th>
+                <th>LOTUS</th>
+                <th>JASMINE</th>
+                <th>IRIS</th>
+              </tr>
+
+              <tr>
+                <th>VÉ ĐƠN</th>
+                <td>369.000/vé</td>
+                <td>329.000/vé</td>
+                <td>289.000/vé</td>
+              </tr>
+              <tr>
+                <th>COMBO 3 VÉ</th>
+                <td>359.000/vé</td>
+                <td>319.000/vé</td>
+                <td>279.000/vé</td>
+              </tr>
+              <tr>
+                <th>COMBO 5 VÉ</th>
+                <td>349.000/vé</td>
+                <td>309.000/vé</td>
+                <td>269.000/vé</td>
+              </tr>
+            </table>
           </div>
-          <!-- Form apply -->
-          <div class="right">
-            <form>
-              <label for="fName">HỌ VÀ TÊN (FULL NAME):</label><br />
-              <input
-                type="text"
-                name="fName"
-                id="fName"
-                placeholder="Nguyễn Văn A"
-                pattern="[A-Za-zÀ-Ỹà-ỹ\s]+"
-                required
-                onfocus="clearPlaceholder(this)"
-              />
-              <br />
-              <label for="phoneNumber">SỐ ĐIỆN THOẠI (PHONE NUMBER):</label
-              ><br />
-              <input
-                type="tel"
-                id="phoneNumber"
-                name="phoneNumber"
-                placeholder="0123456789"
-                pattern="[0-9]{10}"
-                required
-                onfocus="clearPlaceholder(this)"
-              />
-              <br />
-              <label for="email"> EMAIL:</label><br />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="example@gmail.com"
-                required
-                onfocus="clearPlaceholder(this)"
-              /><br />
-              <label for="facebook">LINK FACEBOOK CÁ NHÂN:</label>
-              <input
-                type="url"
-                id="facebook"
-                name="facebook"
-                placeholder="Facebook Address"
-                required
-                onfocus="clearPlaceholder(this)"
-              />
-              <label for="ticketInfo">THÔNG TIN ĐẶT VÉ (TICKET):</label><br />
-              <div class="ticket-options">
-                <label for="jasmineTickets">Jasmine:</label>
-                <div class="ticket-controls">
-                  <button
-                    type="button"
-                    class="ticket-btn"
-                    onclick="decrementTicket('jasmineTickets')"
-                  >
-                    -
-                  </button>
-                  <input
-                    type="text"
-                    id="jasmineTickets"
-                    name="jasmineTickets"
-                    min="0"
-                    value="0"
-                    readonly
-                  />
-                  <button
-                    type="button"
-                    class="ticket-btn"
-                    onclick="incrementTicket('jasmineTickets')"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
+        </div>
+        <!-- Maps of stage -->
+        <div class="bottom">
+          <div class="bottom-container">
+            <img src="./assets/img/Ticket/sodosankhau.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-              <div class="ticket-options">
-                <label for="irisTickets">Iris:</label>
-                <div class="ticket-controls">
-                  <button
-                    type="button"
-                    class="ticket-btn"
-                    onclick="decrementTicket('irisTickets')"
-                  >
-                    -
-                  </button>
-                  <input
-                    type="text"
-                    id="irisTickets"
-                    name="irisTickets"
-                    min="0"
-                    value="0"
-                    readonly
-                  />
-                  <button
-                    type="button"
-                    class="ticket-btn"
-                    onclick="incrementTicket('irisTickets')"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-
-              <div class="ticket-options">
-                <label for="lotusTickets">Lotus:</label>
+    <!-- Section Form -->
+    <section id="form">
+      <div class="form-container">
+        <h2>ĐẶT VÉ NÀO</h2>
+        <form>
+          <div class="form-item">
+            <label for="fullName">HỌ VÀ TÊN (FULL NAME):</label>
+            <input
+              type="text"
+              name="fullName"
+              id="fullName"
+              placeholder="Nguyễn Văn A"
+              pattern="[A-Za-zÀ-Ỹà-ỹ\s]+"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="phoneNumber">SỐ ĐIỆN THOẠI (PHONE NUMBER):</label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="0123456789"
+              pattern="[0-9]{10}"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="email">EMAIL:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@gmail.com"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="facebook">LINK FACEBOOK CÁ NHÂN:</label>
+            <input
+              type="url"
+              id="facebook"
+              name="facebook"
+              placeholder="Facebook Address"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="ticketInfo">HẠNG VÉ (TICKET):</label>
+            <div class="ticket-options">
+              <div class="ticket-type">
+                <label for="lotusTickets">LOTUS:</label>
                 <div class="ticket-controls">
                   <button
                     type="button"
@@ -305,10 +290,99 @@
                 </div>
               </div>
 
-              <input type="submit" value="Đăng ký" />
-            </form>
+              <div class="ticket-type">
+                <label for="jasmineTickets">JASMINE:</label>
+                <div class="ticket-controls">
+                  <button
+                    type="button"
+                    class="ticket-btn"
+                    onclick="decrementTicket('jasmineTickets')"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="text"
+                    id="jasmineTickets"
+                    name="jasmineTickets"
+                    min="0"
+                    value="0"
+                    readonly
+                  />
+                  <button
+                    type="button"
+                    class="ticket-btn"
+                    onclick="incrementTicket('jasmineTickets')"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <div class="ticket-type">
+                <label for="irisTickets">IRIS:</label>
+                <div class="ticket-controls">
+                  <button
+                    type="button"
+                    class="ticket-btn"
+                    onclick="decrementTicket('irisTickets')"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="text"
+                    id="irisTickets"
+                    name="irisTickets"
+                    min="0"
+                    value="0"
+                    readonly
+                  />
+                  <button
+                    type="button"
+                    class="ticket-btn"
+                    onclick="incrementTicket('irisTickets')"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+
+          <div class="form-item">
+            <label>HÌNH THỨC THANH TOÁN (PAYMENTS):</label>
+            <div class="payment-options">
+              <label for="banking">
+                <input
+                  type="radio"
+                  id="banking"
+                  name="payment"
+                  value="banking"
+                  required
+                />
+                Chuyển khoản Ngân hàng (Smart Banking)
+              </label>
+              <label for="cash">
+                <input
+                  type="radio"
+                  id="cash"
+                  name="payment"
+                  value="cash"
+                  required
+                />
+                Thanh toán tiền mặt (Cash)
+              </label>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <label for="totalPrice">TỔNG TIỀN:</label>
+            <div id="totalPrice">0 VNĐ</div>
+          </div>
+
+          <div class="form-item">
+            <input type="submit" value="Đăng ký" />
+          </div>
+        </form>
       </div>
     </section>
 
@@ -318,6 +392,6 @@
     <!-- Footer -->
 
     <!-- Javascript embeded -->
-    <script src="app.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>

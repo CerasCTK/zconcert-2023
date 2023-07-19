@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 .nav-list .right {
@@ -40,7 +40,7 @@
 
 .right .nav-link {
   font-family: "montserrat_bold";
-  transition: ;
+  font-size: 0.9rem;
 }
 
 .right .nav-item:not(:last-child) {
@@ -63,19 +63,19 @@
 
 .intro-container {
   margin-left: 1.5rem;
+  padding-top: 2.5rem;
 }
 
 .intro-container .masthead-heading {
-  font-size: 7rem;
-  font-weight: 900;
+  font-size: 5.5rem;
   font-family: "monument_ultra";
 }
 
 .intro-container .masthead-script {
-  margin: 2rem 0 9rem 0;
+  margin: 1.3rem 0 7rem 0;
   letter-spacing: 0.08rem;
   font-weight: lighter;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-family: montserrat_reg;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .his-item img {
-  width: 50%;
+  width: 40%;
   border-radius: 50%;
   display: block;
   margin: 0 auto;
@@ -156,8 +156,8 @@
 }
 
 .vocal-item {
-  width: 30%;
-  /* width: 25.8%; */
+  /* width: 30%; */
+  width: 25.8%;
 }
 
 .vocal-item:nth-child(4),
@@ -168,42 +168,171 @@
 }
 
 .vocal-item img {
-  width: 14rem;
+  width: 13rem;
   border-radius: 1rem;
-  transition: width 1.25s, height 1.25s;
+  transition: width 1s, height 1s;
 }
 
 .vocal-item img:hover {
-  width: 20rem;
+  width: 15rem;
 }
 
-/* Section Order */
-#order {
+/* Section Ticket Info */
+#ticket-info {
   background-image: url(./assets/img/background/bg-order-ticket.jpg);
   background-size: cover;
-}
-
-.order-container {
-  padding: 1.5rem;
-}
-
-.order-container h2 {
-  font-family: montserrat_extra;
-  font-size: 2rem;
   text-align: center;
 }
 
-.order-container-content {
+.ticket-info-container {
+  padding: 1.5rem;
   display: flex;
+  flex-direction: column;
 }
 
-.order-container-content .left {
-  width: 50%;
+.ticket-info-container h2 {
+  font-family: montserrat_extra;
+  font-size: 2rem;
 }
 
-.order-container-content .right {
-  width: 50%;
+.ticket-info-container .top-container {
+  padding: 0 8rem;
+}
+
+.ticket-info-container table {
   font-family: "montserrat_bold";
+  width: 100%;
+  table-layout: fixed;
+}
+
+.ticket-info-container table tr {
+  padding: 2rem;
+}
+
+.ticket-info-container table th {
+  color: rgb(242, 172, 208);
+  background: rgb(255, 233, 245);
+}
+
+.ticket-info-container table td {
+  color: white;
+  background: rgb(255, 179, 217);
+}
+
+.ticket-info-container .bottom-container {
+  padding-top: 2rem;
+}
+
+.ticket-info-container .bottom-container img {
+  width: 65%;
+  border-radius: 2%;
+}
+
+/* Section Form */
+#form {
+  background-color: #f8f8f8;
+  padding: 2.5rem 0;
+}
+
+.form-container {
+  max-width: 37.5rem;
+  margin: 0 auto;
+}
+
+.form-container h2 {
+  text-align: center;
+  font-family: montserrat_extra;
+  font-size: 2rem;
+  color: #333;
+}
+
+.form-container form {
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-item {
+  margin-bottom: 1.25rem;
+}
+
+.form-item:last-child {
+  text-align: center;
+}
+
+label {
+  font-weight: 600;
+  color: #555;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="url"] {
+  width: 100%;
+  padding: 0.625rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.3125rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.ticket-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin: 2rem 0;
+  padding: 0 3rem;
+}
+
+.ticket-type {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ticket-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.ticket-controls input {
+  text-align: center;
+}
+
+.ticket-btn {
+  background-color: rgb(242, 172, 208);
+  color: #fff;
+  border: none;
+  border-radius: 0.625rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.ticket-btn:hover {
+  background-color: rgb(216, 136, 177);
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+input[type="submit"] {
+  background-color: rgb(242, 172, 208);
+  color: #fff;
+  border: none;
+  border-radius: 0.3125rem;
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(216, 136, 177);
 }
 
 /* Section Contact */
