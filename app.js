@@ -9,7 +9,7 @@ window.onscroll = () => {
   }
 };
 
-// Play music when hover Vocal img
+// Play music when hover to vocal img
 const hoverImages = document.querySelectorAll(".hover-image");
 const hoverMusics = document.querySelectorAll(".hover-music");
 
@@ -42,48 +42,46 @@ function decrementTicket(ticketId) {
 }
 
 // Calculate total price
+function getNumOfTics(id) {
+  const element = document.getElementById(id);
+  return parseInt(element.value);
+}
+
+function splitTickets(numOfTics) {
+  const comboFive = Math.floor(numOfTics / 5);
+  numOfTics = numOfTics - comboFive * 5;
+  const comboThree = Math.floor(numOfTics / 3);
+  const single = numOfTics - comboThree * 3;
+  return [single, comboThree, comboFive];
+}
+
+function calculatePrice(numOfTics, ticketPrice) {
+  const splitTics = splitTickets(numOfTics);
+
+  return splitTics.reduce((accumulator, currentValue, currentIndex) => {
+    return accumulator + currentValue * ticketPrice[currentIndex];
+  }, 0);
+}
+
 function updateTotalPrice() {
-  const lotusSinglePrice = 369000;
-  const jasmineSinglePrice = 329000;
-  const irisSinglePrice = 289000;
+  const lotusPrice = [369000, 359000 * 3, 349000 * 5]; // Single price | Combo 3 price | Combo 5 price
+  const jasminePrice = [329000, 319000 * 3, 309000 * 5];
+  const irisPrice = [289000, 279000 * 3, 269000 * 5];
 
-  const lotusCombo3Price = 359000;
-  const jasmineCombo3Price = 319000;
-  const irisCombo3Price = 279000;
+  const lotusTickets = getNumOfTics("lotusTickets");
+  const jasmineTickets = getNumOfTics("jasmineTickets")
+  const irisTickets = getNumOfTics("irisTickets");
 
-  const lotusCombo5Price = 349000;
-  const jasmineCombo5Price = 309000;
-  const irisCombo5Price = 269000;
-
-  const lotusTickets = parseInt(
-    document.getElementById("lotusTickets").value,
-    10
-  );
-  const jasmineTickets = parseInt(
-    document.getElementById("jasmineTickets").value,
-    10
-  );
-  const irisTickets = parseInt(
-    document.getElementById("irisTickets").value,
-    10
-  );
-
-  const totalLotusPrice =
-    Math.floor(lotusTickets / 3) * lotusCombo3Price * 3 +
-    (lotusTickets % 3) * lotusSinglePrice;
-
-  const totalJasminePrice =
-    Math.floor(jasmineTickets / 3) * jasmineCombo3Price * 3 +
-    (jasmineTickets % 3) * jasmineSinglePrice;
-
-  const totalIrisPrice =
-    Math.floor(irisTickets / 3) * irisCombo3Price * 3 +
-    (irisTickets % 3) * irisSinglePrice;
+  const totalLotusPrice =  calculatePrice(lotusTickets, lotusPrice);
+  const totalJasminePrice = calculatePrice(jasmineTickets, jasminePrice);
+  const totalIrisPrice = calculatePrice(irisTickets, irisPrice);
 
   const totalPrice = totalLotusPrice + totalJasminePrice + totalIrisPrice;
   document.getElementById("totalPrice").innerText =
-    totalPrice.toLocaleString("en-US") + " VNĐ";
+    totalPrice.toLocaleString() + " VNĐ";
 }
 
 // Call updateTotalPrice() on page load in case tickets are pre-filled
-window.addEventListener("load", updateTotalPrice);
+window.addEventListener("load", () => {
+  updateTotalPrice();
+});
