@@ -1,38 +1,12 @@
-// Scroll Navbar
-const navbarElement = document.getElementById("intro-navbar");
-
-window.onscroll = () => {
-  if (window.scrollY !== 0) {
-    navbarElement.classList.add("bg-scroll-navbar");
-  } else {
-    navbarElement.classList.remove("bg-scroll-navbar");
-  }
-};
-
-// Play music when hover to vocal img
-const hoverImages = document.querySelectorAll(".hover-image");
-const hoverMusics = document.querySelectorAll(".hover-music");
-
-hoverImages.forEach((image, index) => {
-  image.addEventListener("mouseover", function () {
-    hoverMusics[index].play();
-  });
-
-  image.addEventListener("mouseout", function () {
-    hoverMusics[index].pause();
-    hoverMusics[index].currentTime = 0; // Resets the audio to the beginning
-  });
-});
-
 // The quantity of ticket
-function incrementTicket(ticketId) {
+window.incrementTicket = (ticketId) => {
   const ticketInput = document.getElementById(ticketId);
   const ticketCount = parseInt(ticketInput.value, 10);
   ticketInput.value = ticketCount + 1;
   updateTotalPrice();
 }
 
-function decrementTicket(ticketId) {
+window.decrementTicket = (ticketId) => {
   const ticketInput = document.getElementById(ticketId);
   const ticketCount = parseInt(ticketInput.value, 10);
   if (ticketCount > 0) {
@@ -42,12 +16,12 @@ function decrementTicket(ticketId) {
 }
 
 // Calculate total price
-function getNumOfTics(id) {
+const getNumOfTics = (id) => {
   const element = document.getElementById(id);
   return parseInt(element.value);
 }
 
-function splitTickets(numOfTics) {
+const splitTickets = (numOfTics) => {
   const comboFive = Math.floor(numOfTics / 5);
   numOfTics = numOfTics - comboFive * 5;
   const comboThree = Math.floor(numOfTics / 3);
@@ -55,7 +29,7 @@ function splitTickets(numOfTics) {
   return [single, comboThree, comboFive];
 }
 
-function calculatePrice(numOfTics, ticketPrice) {
+const calculatePrice = (numOfTics, ticketPrice) => {
   const splitTics = splitTickets(numOfTics);
 
   return splitTics.reduce((accumulator, currentValue, currentIndex) => {
@@ -63,7 +37,7 @@ function calculatePrice(numOfTics, ticketPrice) {
   }, 0);
 }
 
-function updateTotalPrice() {
+const updateTotalPrice = () => {
   const lotusPrice = [369000, 359000 * 3, 349000 * 5]; // Single price | Combo 3 price | Combo 5 price
   const jasminePrice = [329000, 319000 * 3, 309000 * 5];
   const irisPrice = [289000, 279000 * 3, 269000 * 5];
@@ -88,7 +62,7 @@ window.addEventListener("load", () => {
 
 // Show QR code when click to banking radio button
 const imageBankingEle = document.getElementById("banking-qr");
-function handleChange({ value }) {
+window.handleChange = ({ value }) => {
   if (!value) return;
   if (value === "banking") imageBankingEle.classList.add("show");
   else imageBankingEle.classList.remove("show");
