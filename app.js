@@ -85,3 +85,11 @@ function updateTotalPrice() {
 window.addEventListener("load", () => {
   updateTotalPrice();
 });
+
+// Show QR code when click to banking radio button
+const imageBankingEle = document.getElementById("banking-qr");
+function handleChange({ value }) {
+  if (!value) return;
+  if (value === "banking") imageBankingEle.classList.add("show");
+  else imageBankingEle.classList.remove("show");
+}

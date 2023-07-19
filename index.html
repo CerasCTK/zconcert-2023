@@ -348,6 +348,7 @@
                   id="banking"
                   name="payment"
                   value="banking"
+                  onchange="handleChange(this);"
                   required
                 />
                 Chuyển khoản Ngân hàng (Smart Banking)
@@ -358,13 +359,14 @@
                   id="cash"
                   name="payment"
                   value="cash"
+                  onchange="handleChange(this)"
                   required
                 />
                 Thanh toán tiền mặt (Cash)
               </label>
             </div>
           </div>
-
+          <img src="./assets/img/ticket/banking-qrcode.jpg" alt="Banking QR code image" class="banking-qr-image" id="banking-qr">
           <div class="form-item">
             <input type="submit" value="Đăng ký" />
           </div>

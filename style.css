@@ -332,6 +332,13 @@ input[type="url"] {
   padding: 0 2rem;
 }
 
+.banking-qr-image {
+  display: none;
+}
+.banking-qr-image.show {
+  display: inline-block;
+}
+
 input[type="submit"] {
   background-color: rgb(242, 172, 208);
   color: #fff;
