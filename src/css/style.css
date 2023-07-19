@@ -34,12 +34,12 @@
   text-transform: uppercase;
 }
 .left .nav-link {
-  font-family: "plank", sans-serif;
+  font-family: plank, sans-serif;
   font-size: 2rem;
 }
 
 .right .nav-link {
-  font-family: "montserrat_bold", sans-serif;
+  font-family: montserrat-extrabold, sans-serif;
   font-size: 0.9rem;
 }
 
@@ -51,7 +51,7 @@
 #intro {
   height: 100vh;
   width: 100%;
-  background-image: url(assets/img/background/bg-introduce.jpg);
+  background-image: url(../assets/img/background/bg-introduce.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -68,23 +68,21 @@
 
 .intro-container .masthead-heading {
   font-size: 5.5rem;
-  font-family: "monument_ultra", sans-serif;
+  font-family: monument-ultrabold, sans-serif;
 }
 
 .intro-container .masthead-script {
   margin: 1.3rem 0 7rem 0;
   letter-spacing: 0.08rem;
-  font-weight: lighter;
   font-size: 1.3rem;
-  font-family: montserrat_reg, sans-serif;
+  font-family: montserrat, sans-serif;
 }
 
 .intro-container .ticket-order-button {
   text-decoration: none;
   color: white;
   font-size: 1.5rem;
-  font-weight: bolder;
-  font-family: montserrat_bold, sans-serif;
+  font-family: montserrat-bold, sans-serif;
   border-radius: 40px;
   background: rgb(50, 40, 48);
   padding: 1.2rem 1.2rem;
@@ -93,14 +91,13 @@
 
 /* Section History */
 #history {
-  background-image: url(assets/img/background/bg-history.jpg);
+  background-image: url(../assets/img/background/bg-history.jpg);
   background-size: cover;
 }
 
 .history-container {
   text-align: center;
-  font-family: montserrat_bold, sans-serif;
-  font-weight: 800;
+  font-family: montserrat-bold, sans-serif;
   padding: 1.5rem;
 }
 
@@ -128,18 +125,18 @@
 
 /* Section Vocal */
 #vocal {
-  background-image: url(assets/img/background/bg-vocalist.jpg);
+  background-image: url(../assets/img/background/bg-vocalist.jpg);
   background-size: cover;
 }
 
 .vocal-container {
   text-align: center;
-  font-family: montserrat_bold, sans-serif;
+  font-family: montserrat-bold, sans-serif;
   padding: 1.5rem;
 }
 
 .vocal-container h2 {
-  font-family: montserrat_extra, sans-serif;
+  font-family: montserrat-extrabold, sans-serif;
   font-size: 2rem;
   margin-bottom: 0.3rem;
 }
@@ -179,7 +176,7 @@
 
 /* Section Ticket Info */
 #ticket-info {
-  background-image: url(assets/img/background/bg-order-ticket.jpg);
+  background-image: url(../assets/img/background/bg-order-ticket.jpg);
   background-size: cover;
   text-align: center;
 }
@@ -191,7 +188,7 @@
 }
 
 .ticket-info-container h2 {
-  font-family: montserrat_extra, sans-serif;
+  font-family: montserrat-extrabold, sans-serif;
   font-size: 2rem;
 }
 
@@ -200,7 +197,7 @@
 }
 
 .ticket-info-container table {
-  font-family: "montserrat_bold", sans-serif;
+  font-family: montserrat-bold, sans-serif;
   width: 100%;
   table-layout: fixed;
 }
@@ -242,13 +239,13 @@
 
 .form-container h2 {
   text-align: center;
-  font-family: montserrat_extra, sans-serif;
+  font-family: montserrat-extrabold, sans-serif;
   font-size: 2rem;
   color: #333;
 }
 
 .form-container form {
-  font-family: "Montserrat", sans-serif;
+  font-family: montserrat, sans-serif;
 }
 
 .form-item {
@@ -280,7 +277,7 @@ input[type="url"] {
   padding: 0.625rem;
   border: 0.0625rem solid #ccc;
   border-radius: 0.3125rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: montserrat, sans-serif;
 }
 
 .ticket-options {
@@ -346,7 +343,7 @@ input[type="submit"] {
   border-radius: 0.3125rem;
   padding: 0.625rem 1.25rem;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: montserrat, sans-serif;
   font-size: 1rem;
 }
 
@@ -356,7 +353,7 @@ input[type="submit"]:hover {
 
 /* Section Contact */
 #contact {
-  background-image: url(assets/img/background/bg-contact.jpg);
+  background-image: url(../assets/img/background/bg-contact.jpg);
   background-size: cover;
 }
 /* Footer */
