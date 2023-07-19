@@ -351,9 +351,4 @@ input[type="submit"]:hover {
   background-color: rgb(216, 136, 177);
 }
 
-/* Section Contact */
-#contact {
-  background-image: url(../assets/img/background/bg-contact.jpg);
-  background-size: cover;
-}
 /* Footer */
