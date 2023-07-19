@@ -93,7 +93,7 @@
 
 /* Section History */
 #history {
-  background-image: url(./assets/img/background/bg-history.jpg);
+  background-image: url(assets/img/background/bg-history.jpg);
   background-size: cover;
 }
 
@@ -128,7 +128,7 @@
 
 /* Section Vocal */
 #vocal {
-  background-image: url(./assets/img/background/bg-vocalist.jpg);
+  background-image: url(assets/img/background/bg-vocalist.jpg);
   background-size: cover;
 }
 
@@ -179,7 +179,7 @@
 
 /* Section Ticket Info */
 #ticket-info {
-  background-image: url(./assets/img/background/bg-order-ticket.jpg);
+  background-image: url(assets/img/background/bg-order-ticket.jpg);
   background-size: cover;
   text-align: center;
 }
@@ -356,7 +356,7 @@ input[type="submit"]:hover {
 
 /* Section Contact */
 #contact {
-  background-image: url(./assets/img/background/bg-contact.jpg);
+  background-image: url(assets/img/background/bg-contact.jpg);
   background-size: cover;
 }
 /* Footer */
