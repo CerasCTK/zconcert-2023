@@ -34,12 +34,12 @@
   text-transform: uppercase;
 }
 .left .nav-link {
-  font-family: "plank";
+  font-family: "plank", sans-serif;
   font-size: 2rem;
 }
 
 .right .nav-link {
-  font-family: "montserrat_bold";
+  font-family: "montserrat_bold", sans-serif;
   font-size: 0.9rem;
 }
 
@@ -68,7 +68,7 @@
 
 .intro-container .masthead-heading {
   font-size: 5.5rem;
-  font-family: "monument_ultra";
+  font-family: "monument_ultra", sans-serif;
 }
 
 .intro-container .masthead-script {
@@ -76,7 +76,7 @@
   letter-spacing: 0.08rem;
   font-weight: lighter;
   font-size: 1.3rem;
-  font-family: montserrat_reg;
+  font-family: montserrat_reg, sans-serif;
 }
 
 .intro-container .ticket-order-button {
@@ -84,7 +84,7 @@
   color: white;
   font-size: 1.5rem;
   font-weight: bolder;
-  font-family: montserrat_bold;
+  font-family: montserrat_bold, sans-serif;
   border-radius: 40px;
   background: rgb(50, 40, 48);
   padding: 1.2rem 1.2rem;
@@ -99,7 +99,7 @@
 
 .history-container {
   text-align: center;
-  font-family: montserrat_bold;
+  font-family: montserrat_bold, sans-serif;
   font-weight: 800;
   padding: 1.5rem;
 }
@@ -134,12 +134,12 @@
 
 .vocal-container {
   text-align: center;
-  font-family: montserrat_bold;
+  font-family: montserrat_bold, sans-serif;
   padding: 1.5rem;
 }
 
 .vocal-container h2 {
-  font-family: montserrat_extra;
+  font-family: montserrat_extra, sans-serif;
   font-size: 2rem;
   margin-bottom: 0.3rem;
 }
@@ -191,7 +191,7 @@
 }
 
 .ticket-info-container h2 {
-  font-family: montserrat_extra;
+  font-family: montserrat_extra, sans-serif;
   font-size: 2rem;
 }
 
@@ -200,7 +200,7 @@
 }
 
 .ticket-info-container table {
-  font-family: "montserrat_bold";
+  font-family: "montserrat_bold", sans-serif;
   width: 100%;
   table-layout: fixed;
 }
@@ -242,7 +242,7 @@
 
 .form-container h2 {
   text-align: center;
-  font-family: montserrat_extra;
+  font-family: montserrat_extra, sans-serif;
   font-size: 2rem;
   color: #333;
 }
@@ -254,17 +254,17 @@
 .form-item {
   margin-bottom: 1.25rem;
 }
-
 .form-item:nth-child(6) {
   display: flex;
 }
-
 .form-item:nth-child(6) div {
   padding-left: 1rem;
 }
-
 .form-item:last-child {
   text-align: center;
+}
+.form-item > label {
+  text-transform: uppercase;
 }
 
 label {
@@ -296,6 +296,9 @@ input[type="url"] {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.ticket-type > label {
+  text-transform: uppercase;
 }
 
 .ticket-controls {
