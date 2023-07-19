@@ -157,7 +157,7 @@
 
 .vocal-item {
   /* width: 30%; */
-  width: 25.8%;
+  width: 26.8%;
 }
 
 .vocal-item:nth-child(4),
@@ -205,16 +205,17 @@
   table-layout: fixed;
 }
 
-.ticket-info-container table tr {
-  padding: 2rem;
+.ticket-info-container table th,
+.ticket-info-container table td {
+  padding: 0.4rem;
 }
 
-.ticket-info-container table th {
+.ticket-info-container table th span {
   color: rgb(242, 172, 208);
   background: rgb(255, 233, 245);
 }
 
-.ticket-info-container table td {
+.ticket-info-container table td span {
   color: white;
   background: rgb(255, 179, 217);
 }
@@ -252,6 +253,14 @@
 
 .form-item {
   margin-bottom: 1.25rem;
+}
+
+.form-item:nth-child(6) {
+  display: flex;
+}
+
+.form-item:nth-child(6) div {
+  padding-left: 1rem;
 }
 
 .form-item:last-child {
