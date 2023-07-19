@@ -31,7 +31,7 @@ module.exports = {
     rules: [
       {
         test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
           options: {
@@ -47,7 +47,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g)$/i,
+        test: /\.(png|jpe?g|webp)$/i,
         type: "asset/resource",
         use: [
           {
