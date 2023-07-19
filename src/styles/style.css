@@ -217,13 +217,26 @@
   background: rgb(255, 179, 217);
 }
 
-.ticket-info-container .bottom-container {
+.ticket-info-container .middle-container {
   padding-top: 2rem;
 }
 
-.ticket-info-container .bottom-container img {
+.ticket-info-container .middle-container img {
   width: 65%;
   border-radius: 2%;
+}
+
+.ticket-info-container .bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.ticket-info-container .bottom-container {
+  background-color: rgba(219, 101, 123, 0.4);
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-family: montserrat-bold, sans-serif;
 }
 
 /* Section Form */
