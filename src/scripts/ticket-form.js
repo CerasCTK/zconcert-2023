@@ -4,7 +4,7 @@ window.incrementTicket = (ticketId) => {
   const ticketCount = parseInt(ticketInput.value, 10);
   ticketInput.value = ticketCount + 1;
   updateTotalPrice();
-}
+};
 
 window.decrementTicket = (ticketId) => {
   const ticketInput = document.getElementById(ticketId);
@@ -13,13 +13,13 @@ window.decrementTicket = (ticketId) => {
     ticketInput.value = ticketCount - 1;
     updateTotalPrice();
   }
-}
+};
 
 // Calculate total price
 const getNumOfTics = (id) => {
   const element = document.getElementById(id);
   return parseInt(element.value);
-}
+};
 
 const splitTickets = (numOfTics) => {
   const comboFive = Math.floor(numOfTics / 5);
@@ -27,7 +27,7 @@ const splitTickets = (numOfTics) => {
   const comboThree = Math.floor(numOfTics / 3);
   const single = numOfTics - comboThree * 3;
   return [single, comboThree, comboFive];
-}
+};
 
 const calculatePrice = (numOfTics, ticketPrice) => {
   const splitTics = splitTickets(numOfTics);
@@ -35,7 +35,7 @@ const calculatePrice = (numOfTics, ticketPrice) => {
   return splitTics.reduce((accumulator, currentValue, currentIndex) => {
     return accumulator + currentValue * ticketPrice[currentIndex];
   }, 0);
-}
+};
 
 const updateTotalPrice = () => {
   const lotusPrice = [369000, 359000 * 3, 349000 * 5]; // Single price | Combo 3 price | Combo 5 price
@@ -43,17 +43,17 @@ const updateTotalPrice = () => {
   const irisPrice = [289000, 279000 * 3, 269000 * 5];
 
   const lotusTickets = getNumOfTics("lotusTickets");
-  const jasmineTickets = getNumOfTics("jasmineTickets")
+  const jasmineTickets = getNumOfTics("jasmineTickets");
   const irisTickets = getNumOfTics("irisTickets");
 
-  const totalLotusPrice =  calculatePrice(lotusTickets, lotusPrice);
+  const totalLotusPrice = calculatePrice(lotusTickets, lotusPrice);
   const totalJasminePrice = calculatePrice(jasmineTickets, jasminePrice);
   const totalIrisPrice = calculatePrice(irisTickets, irisPrice);
 
   const totalPrice = totalLotusPrice + totalJasminePrice + totalIrisPrice;
   document.getElementById("totalPrice").innerText =
     totalPrice.toLocaleString() + " VNĐ";
-}
+};
 
 // Call updateTotalPrice() on page load in case tickets are pre-filled
 window.addEventListener("load", () => {
@@ -66,4 +66,4 @@ window.handleChange = ({ value }) => {
   if (!value) return;
   if (value === "banking") imageBankingEle.classList.add("show");
   else imageBankingEle.classList.remove("show");
-}
+};

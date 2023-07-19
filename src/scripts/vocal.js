@@ -5,8 +5,7 @@ const hoverMusics = document.querySelectorAll(".hover-music");
 hoverImages.forEach((image, index) => {
   const audio = new Audio(hoverMusics[index].src);
 
-  image.addEventListener("mouseover",  async () => {
-
+  image.addEventListener("mouseover", async () => {
     await audio.play();
   });
 

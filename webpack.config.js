@@ -13,8 +13,9 @@ module.exports = {
     main: [
       "./src/scripts/navbar.js",
       "./src/scripts/vocal.js",
-      "./src/scripts/ticket-form.js"
-    ]
+      "./src/scripts/ticket-form.js",
+      "./src/scripts/popup.js",
+    ],
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -23,8 +24,8 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all'
-    }
+      chunks: "all",
+    },
   },
   module: {
     rules: [
@@ -32,34 +33,36 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-              presets: ['@babel/preset-env'],
+            presets: ["@babel/preset-env"],
           },
         },
       },
       {
         test: /\.css$/i,
         use: [
-          'style-loader',
-          { loader: 'css-loader', options: { sourceMap: true } },
+          "style-loader",
+          { loader: "css-loader", options: { sourceMap: true } },
         ],
       },
       {
         test: /\.(png|jpe?g)$/i,
-        type: 'asset/resource',
-        use: [{
-          loader: 'image-webpack-loader',
-          options: {
-            pngquant: {
-              quality: [.90, .95],
+        type: "asset/resource",
+        use: [
+          {
+            loader: "image-webpack-loader",
+            options: {
+              pngquant: {
+                quality: [0.9, 0.95],
+              },
             },
-          }
-        }],
+          },
+        ],
         parser: {
           dataUrlCondition: {
-            maxSize: 10 * 1024 // Inline anything under 10kb
-          }
+            maxSize: 10 * 1024, // Inline anything under 10kb
+          },
         },
         generator: {
           filename: "assets/img/[name]-[hash][ext]",
@@ -69,12 +72,12 @@ module.exports = {
         test: /\.(woff|woff2)$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/font/[name]-[hash][ext]"
-        }
+          filename: "assets/font/[name]-[hash][ext]",
+        },
       },
       {
         test: /\.(mp3)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
         generator: {
           filename: "assets/audio/[name]-[hash][ext]",
         },
@@ -83,8 +86,8 @@ module.exports = {
         test: /\.html$/i,
         use: {
           loader: "html-loader",
-        }
-      }
+        },
+      },
     ],
   },
   plugins: [
