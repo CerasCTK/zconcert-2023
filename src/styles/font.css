@@ -1,0 +1,29 @@
+@font-face {
+  font-family: plank;
+  src: url(../assets/font/plank/plank.woff2);
+}
+
+@font-face {
+  font-family: monument-ultrabold;
+  src: url(../assets/font/monument-extended/MonumentExtended-Ultrabold.woff2);
+}
+
+@font-face {
+  font-family: montserrat;
+  src: url(../assets/font/montserrat/Montserrat-Regular.woff2);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: montserrat-bold;
+  src: url(../assets/font/montserrat/Montserrat-Bold.woff2);
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: montserrat-extrabold;
+  src: url(../assets/font/montserrat/Montserrat-ExtraBold.woff2);
+  font-weight: 900;
+  font-style: normal;
+}
