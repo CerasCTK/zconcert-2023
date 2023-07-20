@@ -153,15 +153,8 @@
 }
 
 .vocal-item {
-  /* width: 30%; */
   width: 26.8%;
-}
-
-.vocal-item:nth-child(4),
-.vocal-item:nth-child(5),
-.vocal-item:nth-child(6) {
-  margin-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 1rem;
 }
 
 .vocal-item img {
@@ -210,11 +203,15 @@
 .ticket-info-container table th span {
   color: rgb(242, 172, 208);
   background: rgb(255, 233, 245);
+  border-radius: 1rem;
+  padding: 0.3rem;
 }
 
 .ticket-info-container table td span {
   color: white;
   background: rgb(255, 179, 217);
+  border-radius: 1rem;
+  padding: 0.3rem;
 }
 
 .ticket-info-container .middle-container {
@@ -478,4 +475,86 @@ input[type="submit"]:hover {
 .social-contact-item:nth-child(4) a:focus i,
 .social-contact-item:nth-child(4) a:hover i {
   color: white;
+}
+
+/* RESPONSIVE FOR TABLET */
+
+@media only screen and (max-width: 768px) {
+  /* Navbar */
+  .nav-list .left .nav-link {
+    font-size: 1.8rem;
+  }
+
+  .right .nav-item:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  /* Introduce */
+  .intro-container .masthead-heading {
+    font-size: 4rem;
+  }
+
+  .intro-container .masthead-script {
+    font-size: 1.1rem;
+  }
+
+  /* Vocal */
+  .vocal-item {
+    width: 40%;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  /* Ticket */
+  .ticket-info-container .top-container {
+    padding: 0 1rem;
+  }
+
+  .ticket-info-container .middle-container img {
+    width: 85%;
+  }
+}
+
+/* RESPONSIVE FOR MOBILE */
+
+@media only screen and (max-width: 600px) {
+  .nav-list .left .nav-link {
+    font-size: 1.5rem;
+  }
+
+  .right .nav-item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .intro-container .masthead-heading {
+    font-size: 3.5rem;
+  }
+
+  .intro-container .masthead-script {
+    font-size: 1rem;
+  }
+
+  .vocal-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vocal-item {
+    width: 80%;
+  }
+
+  .ticket-info-container .top-container {
+    padding: 0 0.5rem;
+  }
+
+  .ticket-info-container table th,
+  .ticket-info-container table td {
+    font-size: 0.9rem;
+  }
+
+  .ticket-info-container .middle-container img {
+    width: 100%;
+    border-radius: 0;
+  }
 }
