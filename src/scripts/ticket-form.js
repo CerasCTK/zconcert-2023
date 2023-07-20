@@ -1,3 +1,5 @@
+import { Popup } from "./utils/popup/popup-utils";
+
 // The quantity of ticket
 window.incrementTicket = (ticketId) => {
   const ticketInput = document.getElementById(ticketId);
@@ -67,3 +69,13 @@ window.handleChange = ({ value }) => {
   if (value === "banking") imageBankingEle.classList.add("show");
   else imageBankingEle.classList.remove("show");
 };
+
+// Popup to show benefit details
+const benefitOpener = document.getElementById("benefitOpener");
+const benefitContent = document.getElementById("benefitContent");
+
+const benefitPopup = new Popup.PopupBuilder(benefitContent).closeOnClickOutside().build();
+benefitOpener.addEventListener("click", (_event) => {
+  benefitPopup.show();
+
+})

@@ -38,3 +38,21 @@
     cursor: pointer;
     font-size: 2rem;
 }
+
+/* TABLET */
+@media only screen and (max-width: 768px) {
+    .popup-wrapper {
+        min-width: 400px;
+        min-height: 500px;
+        max-width: 500px;
+        max-height: 600px;
+    }
+}
+
+/* MOBILE */
+@media only screen and (max-width: 600px) {
+    .popup-wrapper {
+        min-width: 250px;
+        min-height: 400px;
+    }
+}
