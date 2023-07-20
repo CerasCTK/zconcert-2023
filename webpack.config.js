@@ -15,10 +15,13 @@ module.exports = {
       "./src/scripts/utils/popup/popup-utils.js"
     ],
     bundle: [
+      "./src/scripts/assets.js",
+      "./src/scripts/startup.js",
       "./src/scripts/navbar.js",
+      "./src/scripts/history.js",
       "./src/scripts/vocal.js",
       "./src/scripts/ticket-form.js",
-      "./src/scripts/popup.js",
+      "./src/scripts/footer.js",
     ],
   },
   output: {
