@@ -28,6 +28,10 @@
   display: flex;
 }
 
+.nav-list .btn-menu {
+  display: none;
+}
+
 #intro-navbar .nav-link {
   text-decoration: none;
   font-weight: 200;
@@ -483,6 +487,9 @@ input[type="submit"]:hover {
 
 @media only screen and (max-width: 768px) {
   /* Navbar */
+  .nav-list .btn-menu {
+    display: none;
+  }
   .nav-list .left .nav-link {
     font-size: 1.8rem;
   }
@@ -520,6 +527,10 @@ input[type="submit"]:hover {
 /* RESPONSIVE FOR MOBILE */
 
 @media only screen and (max-width: 600px) {
+  /* Navbar */
+  .nav-list {
+    padding: 1rem;
+  }
   .nav-list .left .nav-link {
     font-size: 1.5rem;
   }
