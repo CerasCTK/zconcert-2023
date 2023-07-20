@@ -1,6 +1,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const webpack = require("webpack");
 
 module.exports = {
   stats: "minimal",
@@ -10,7 +11,10 @@ module.exports = {
       "./src/styles/normalize.css",
       "./src/styles/style.css",
     ],
-    main: [
+    util: [
+      "./src/scripts/utils/popup/popup-utils.js"
+    ],
+    bundle: [
       "./src/scripts/navbar.js",
       "./src/scripts/vocal.js",
       "./src/scripts/ticket-form.js",
@@ -97,5 +101,11 @@ module.exports = {
       minify: false,
       hash: false,
     }),
+    // new webpack.ProvidePlugin({
+    //   $: "jquery",
+    //   jQuery: "jquery",
+    //   "window.$": "jquery",
+    //   "window.jQuery": "jquery'",
+    // })
   ],
 };

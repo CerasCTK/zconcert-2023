@@ -237,6 +237,8 @@
   padding: 1rem;
   margin-top: 1rem;
   font-family: montserrat-bold, sans-serif;
+  user-select: none;
+  cursor: pointer;
 }
 
 /* Section Form */
