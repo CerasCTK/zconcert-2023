@@ -153,15 +153,8 @@
 }
 
 .vocal-item {
-  /* width: 30%; */
   width: 26.8%;
-}
-
-.vocal-item:nth-child(4),
-.vocal-item:nth-child(5),
-.vocal-item:nth-child(6) {
-  margin-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 1rem;
 }
 
 .vocal-item img {
@@ -210,11 +203,15 @@
 .ticket-info-container table th span {
   color: rgb(242, 172, 208);
   background: rgb(255, 233, 245);
+  border-radius: 1rem;
+  padding: 0.3rem;
 }
 
 .ticket-info-container table td span {
   color: white;
   background: rgb(255, 179, 217);
+  border-radius: 1rem;
+  padding: 0.3rem;
 }
 
 .ticket-info-container .middle-container {
@@ -366,4 +363,200 @@ input[type="submit"]:hover {
   background-color: rgb(216, 136, 177);
 }
 
-/* Footer */
+/* Section Contact */
+#contact {
+  background-image: url(../assets/img/background/bg-contact.jpg);
+  background-size: cover;
+}
+
+.contact-container {
+  padding: 3rem 1.5rem;
+  display: flex;
+}
+
+.contact-container .left {
+  width: 30%;
+}
+
+.contact-container .middle {
+  width: 40%;
+}
+
+.contact-container .right {
+  width: 30%;
+}
+
+.contact-container i {
+  font-size: 1.5rem;
+}
+
+.contact-container a {
+  text-decoration: none;
+}
+
+.contact-container .left-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container .info-contact-item {
+  display: flex;
+  margin: 1.5rem auto;
+}
+
+.contact-container .info-contact-item i {
+  margin-right: 0.6rem;
+}
+
+.contact-container .info-contact-item:nth-child(2) div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container .social-contact {
+  display: flex;
+}
+
+.contact-container .social-contact span {
+  width: 15%;
+}
+
+.contact-container .social-contact a {
+  display: flex;
+  border-radius: 50%;
+  border: 1px #333 solid;
+  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-contact-item:nth-child(1) a:focus,
+.social-contact-item:nth-child(1) a:hover {
+  background: #486ba3;
+}
+
+.social-contact-item:nth-child(2) a:focus,
+.social-contact-item:nth-child(2) a:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+}
+
+.social-contact-item:nth-child(3) a:focus,
+.social-contact-item:nth-child(3) a:hover {
+  background: #183153;
+}
+
+.social-contact-item:nth-child(4) a:focus,
+.social-contact-item:nth-child(4) a:hover {
+  background: #ff0000;
+}
+
+.social-contact-item:nth-child(1) a:focus i,
+.social-contact-item:nth-child(1) a:hover i {
+  color: white;
+}
+
+.social-contact-item:nth-child(2) a:focus i,
+.social-contact-item:nth-child(2) a:hover i {
+  color: white;
+}
+
+.social-contact-item:nth-child(3) a:focus i,
+.social-contact-item:nth-child(3) a:hover i {
+  color: white;
+}
+
+.social-contact-item:nth-child(4) a:focus i,
+.social-contact-item:nth-child(4) a:hover i {
+  color: white;
+}
+
+/* RESPONSIVE FOR TABLET */
+
+@media only screen and (max-width: 768px) {
+  /* Navbar */
+  .nav-list .left .nav-link {
+    font-size: 1.8rem;
+  }
+
+  .right .nav-item:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  /* Introduce */
+  .intro-container .masthead-heading {
+    font-size: 4rem;
+  }
+
+  .intro-container .masthead-script {
+    font-size: 1.1rem;
+  }
+
+  /* Vocal */
+  .vocal-item {
+    width: 40%;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  /* Ticket */
+  .ticket-info-container .top-container {
+    padding: 0 1rem;
+  }
+
+  .ticket-info-container .middle-container img {
+    width: 85%;
+  }
+}
+
+/* RESPONSIVE FOR MOBILE */
+
+@media only screen and (max-width: 600px) {
+  .nav-list .left .nav-link {
+    font-size: 1.5rem;
+  }
+
+  .right .nav-item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .intro-container .masthead-heading {
+    font-size: 3.5rem;
+  }
+
+  .intro-container .masthead-script {
+    font-size: 1rem;
+  }
+
+  .vocal-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vocal-item {
+    width: 80%;
+  }
+
+  .ticket-info-container .top-container {
+    padding: 0 0.5rem;
+  }
+
+  .ticket-info-container table th,
+  .ticket-info-container table td {
+    font-size: 0.9rem;
+  }
+
+  .ticket-info-container .middle-container img {
+    width: 100%;
+    border-radius: 0;
+  }
+}
