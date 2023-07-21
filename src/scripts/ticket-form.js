@@ -32,21 +32,31 @@ const splitTickets = (numOfTics) => {
 };
 
 const calculatePrice = (numOfTics, ticketPrice) => {
-  const splitTics = splitTickets(numOfTics);
-
-  return splitTics.reduce((accumulator, currentValue, currentIndex) => {
-    return accumulator + currentValue * ticketPrice[currentIndex];
-  }, 0);
+  return numOfTics * ticketPrice;
 };
 
 const updateTotalPrice = () => {
-  const lotusPrice = [369000, 359000 * 3, 349000 * 5]; // Single price | Combo 3 price | Combo 5 price
-  const jasminePrice = [329000, 319000 * 3, 309000 * 5];
-  const irisPrice = [289000, 279000 * 3, 269000 * 5];
-
   const lotusTickets = getNumOfTics("lotusTickets");
   const jasmineTickets = getNumOfTics("jasmineTickets");
   const irisTickets = getNumOfTics("irisTickets");
+
+  var lotusPrice;
+  var jasminePrice;
+  var irisPrice;
+
+  if (lotusTickets >= 5 || jasmineTickets >= 5 || irisTickets >= 5) {
+    lotusPrice = 389000;
+    jasminePrice = 319000;
+    irisPrice = 269000;
+  } else if (lotusTickets >= 3 || jasmineTickets >= 3 || irisTickets >= 3) {
+    lotusPrice = 399000;
+    jasminePrice = 329000;
+    irisPrice = 279000;
+  } else {
+    lotusPrice = 409000;
+    jasminePrice = 339000;
+    irisPrice = 289000;
+  }
 
   const totalLotusPrice = calculatePrice(lotusTickets, lotusPrice);
   const totalJasminePrice = calculatePrice(jasmineTickets, jasminePrice);
@@ -74,8 +84,9 @@ window.handleChange = ({ value }) => {
 const benefitOpener = document.getElementById("benefitOpener");
 const benefitContent = document.getElementById("benefitContent");
 
-const benefitPopup = new Popup.PopupBuilder(benefitContent).closeOnClickOutside().build();
+const benefitPopup = new Popup.PopupBuilder(benefitContent)
+  .closeOnClickOutside()
+  .build();
 benefitOpener.addEventListener("click", (_event) => {
   benefitPopup.show();
-
-})
+});

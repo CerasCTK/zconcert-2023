@@ -1,6 +1,5 @@
 * {
   scroll-behavior: smooth;
-  /* color: rgb(50, 40, 48); */
   color: rgb(70, 40, 48);
 }
 
@@ -100,9 +99,12 @@
 }
 
 .history-container {
-  text-align: center;
   font-family: montserrat-bold, sans-serif;
   padding: 1.5rem;
+}
+
+.history-container h2 {
+  text-align: center;
 }
 
 .his-list {
@@ -121,10 +123,18 @@
   border-radius: 50%;
   display: block;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .his-item span {
   margin-top: 2rem;
+  text-align: center;
+}
+
+.his-content-container {
+  padding: 0 1rem;
+  text-align: justify;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* Section Vocal */
@@ -190,7 +200,7 @@
 }
 
 .ticket-info-container .top-container {
-  padding: 0 8rem;
+  padding: 0 15rem;
 }
 
 .ticket-info-container table {
@@ -205,15 +215,17 @@
 }
 
 .ticket-info-container table th span {
-  color: rgb(242, 172, 208);
-  background: rgb(255, 233, 245);
-  border-radius: 1rem;
   padding: 0.3rem;
 }
 
+.ticket-info-container table tr:first-child th span {
+  display: inline-block;
+  background: rgba(237, 160, 197, 0.758);
+  border-radius: 1rem;
+  width: 7rem;
+}
+
 .ticket-info-container table td span {
-  color: white;
-  background: rgb(255, 179, 217);
   border-radius: 1rem;
   padding: 0.3rem;
 }
@@ -359,7 +371,7 @@ input[type="submit"] {
   border-radius: 0.3125rem;
   padding: 0.625rem 1.25rem;
   cursor: pointer;
-  font-family: montserrat, sans-serif;
+  font-family: montserrat-bold, sans-serif;
   font-size: 1rem;
 }
 
@@ -481,6 +493,16 @@ input[type="submit"]:hover {
 .social-contact-item:nth-child(4) a:focus i,
 .social-contact-item:nth-child(4) a:hover i {
   color: white;
+}
+
+/* Copyright */
+.copyright-container {
+  padding: 0.5rem 2rem;
+  text-align: center;
+}
+
+.copyright-container a {
+  text-decoration: none;
 }
 
 /* RESPONSIVE FOR TABLET */
