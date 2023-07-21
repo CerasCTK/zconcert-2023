@@ -1,5 +1,23 @@
 import { Popup } from "./utils/popup/popup-utils";
 
+const lotusPrice = {
+  single: 409000,
+  combo3: 399000,
+  combo5: 389000,
+};
+
+const jasminePrice = {
+  single: 339000,
+  combo3: 329000,
+  combo5: 319000,
+};
+
+const irisPrice = {
+  single: 289000,
+  combo3: 279000,
+  combo5: 269000,
+}
+
 // The quantity of ticket
 window.incrementTicket = (ticketId) => {
   const ticketInput = document.getElementById(ticketId);
@@ -23,44 +41,21 @@ const getNumOfTics = (id) => {
   return parseInt(element.value);
 };
 
-const splitTickets = (numOfTics) => {
-  const comboFive = Math.floor(numOfTics / 5);
-  numOfTics = numOfTics - comboFive * 5;
-  const comboThree = Math.floor(numOfTics / 3);
-  const single = numOfTics - comboThree * 3;
-  return [single, comboThree, comboFive];
-};
-
-const calculatePrice = (numOfTics, ticketPrice) => {
-  return numOfTics * ticketPrice;
-};
+const getPerTicPrice = (numOfTics, ticketPrice) => {
+  if (numOfTics >= 5) return ticketPrice.combo5;
+  if (numOfTics >= 3) return ticketPrice.combo3;
+  if (numOfTics >= 1) return ticketPrice.single;
+  else return 0;
+}
 
 const updateTotalPrice = () => {
-  const lotusTickets = getNumOfTics("lotusTickets");
-  const jasmineTickets = getNumOfTics("jasmineTickets");
-  const irisTickets = getNumOfTics("irisTickets");
+  const numOfLotus = getNumOfTics("lotusTickets");
+  const numOfJasmine = getNumOfTics("jasmineTickets");
+  const numOfIris = getNumOfTics("irisTickets");
 
-  var lotusPrice;
-  var jasminePrice;
-  var irisPrice;
-
-  if (lotusTickets >= 5 || jasmineTickets >= 5 || irisTickets >= 5) {
-    lotusPrice = 389000;
-    jasminePrice = 319000;
-    irisPrice = 269000;
-  } else if (lotusTickets >= 3 || jasmineTickets >= 3 || irisTickets >= 3) {
-    lotusPrice = 399000;
-    jasminePrice = 329000;
-    irisPrice = 279000;
-  } else {
-    lotusPrice = 409000;
-    jasminePrice = 339000;
-    irisPrice = 289000;
-  }
-
-  const totalLotusPrice = calculatePrice(lotusTickets, lotusPrice);
-  const totalJasminePrice = calculatePrice(jasmineTickets, jasminePrice);
-  const totalIrisPrice = calculatePrice(irisTickets, irisPrice);
+  const totalLotusPrice = numOfLotus * getPerTicPrice(numOfLotus, lotusPrice);
+  const totalJasminePrice = numOfJasmine * getPerTicPrice(numOfJasmine, jasminePrice);
+  const totalIrisPrice = numOfIris * getPerTicPrice(numOfIris, irisPrice);
 
   const totalPrice = totalLotusPrice + totalJasminePrice + totalIrisPrice;
   document.getElementById("totalPrice").innerText =
