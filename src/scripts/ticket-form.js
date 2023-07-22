@@ -1,4 +1,5 @@
 import { Popup } from "./utils/popup/popup-utils";
+import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
 
 const lotusPrice = {
   single: 409000,
@@ -48,16 +49,20 @@ const getPerTicPrice = (numOfTics, ticketPrice) => {
   else return 0;
 }
 
+const calculateTotalPrice = (numOfLotus, numOfJasmine, numOfIris) => {
+  const totalLotusPrice = numOfLotus * getPerTicPrice(numOfLotus, lotusPrice);
+  const totalJasminePrice = numOfJasmine * getPerTicPrice(numOfJasmine, jasminePrice);
+  const totalIrisPrice = numOfIris * getPerTicPrice(numOfIris, irisPrice);
+
+  return totalLotusPrice + totalJasminePrice + totalIrisPrice;
+}
+
 const updateTotalPrice = () => {
   const numOfLotus = getNumOfTics("lotusTickets");
   const numOfJasmine = getNumOfTics("jasmineTickets");
   const numOfIris = getNumOfTics("irisTickets");
 
-  const totalLotusPrice = numOfLotus * getPerTicPrice(numOfLotus, lotusPrice);
-  const totalJasminePrice = numOfJasmine * getPerTicPrice(numOfJasmine, jasminePrice);
-  const totalIrisPrice = numOfIris * getPerTicPrice(numOfIris, irisPrice);
-
-  const totalPrice = totalLotusPrice + totalJasminePrice + totalIrisPrice;
+  const totalPrice = calculateTotalPrice(numOfLotus, numOfJasmine, numOfIris);
   document.getElementById("totalPrice").innerText =
     totalPrice.toLocaleString() + " VNĐ";
 };
@@ -85,3 +90,38 @@ const benefitPopup = new Popup.PopupBuilder(benefitContent)
 benefitOpener.addEventListener("click", (_event) => {
   benefitPopup.show();
 });
+
+const orderTicketForm = document.getElementById("orderTicketForm");
+
+orderTicketForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const form = event.target;
+
+  const fullName = form.querySelector("input#fullName").value;
+  const phoneNumber = form.querySelector("input#phoneNumber").value;
+  const email = form.querySelector("input#email").value;
+  const facebook = form.querySelector("input#facebook").value;
+
+  const lotus = form.querySelector("input#lotusTickets").value;
+  const jasmine = form.querySelector("input#jasmineTickets").value;
+  const iris = form.querySelector("input#irisTickets").value;
+  if (lotus === 0 && jasmine === 0 && iris === 0) return;
+
+  const total = calculateTotalPrice(lotus, jasmine, iris);
+
+  const payment = form.querySelector("input[name=\"payment\"]:checked");
+  if (!payment) return;
+  const paymentMethod = payment.value;
+
+  const newRow = createData(fullName, phoneNumber, email, facebook, lotus, jasmine, iris, total, paymentMethod);
+  writeToSheet(newRow, {}, registerSuccess, registerFailure);
+});
+
+const registerSuccess = (result) => {
+  console.log(result);
+}
+
+const registerFailure = (error) => {
+  console.log(error);
+}

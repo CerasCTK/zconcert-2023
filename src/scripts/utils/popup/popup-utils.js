@@ -54,12 +54,12 @@ export class Popup {
   };
 
   #enableWindowScrollEvent = () => {
-    const body = document.querySelector("body");
+    const { body } = document ;
     body.style.overflow = "auto";
   };
 
   #disableWindowScrollEvent = () => {
-    const body = document.querySelector("body");
+    const { body } = document;
     body.style.overflow = "hidden";
   };
 
@@ -91,7 +91,6 @@ export class Popup {
   };
 
   #hidePopup = () => {
-    if (!this.#isShowing()) return;
     this.container.classList.remove(this.#showPopupClass);
     this.#enableWindowScrollEvent();
   };
@@ -104,6 +103,11 @@ export class Popup {
     if (this.#isShowing()) return;
     this.#showPopup();
   };
+
+  hide = () => {
+    if (!this.#isShowing()) return;
+    this.#hidePopup();
+  }
 
   static PopupBuilder = class {
     #popup;
