@@ -254,6 +254,10 @@
   cursor: pointer;
 }
 
+#benefitContent img {
+  height: 580px;
+}
+
 /* Section Form */
 #form {
   background-color: #f8f8f8;
@@ -272,12 +276,17 @@
   color: #333;
 }
 
+.form-container img {
+  margin-bottom: 1.5rem;
+}
+
 .form-container form {
   font-family: montserrat, sans-serif;
 }
 
 .form-item {
   margin-bottom: 1.25rem;
+  font-family: montserrat-bold, sans-serif;
 }
 .form-item:nth-child(6) {
   display: flex;
@@ -292,17 +301,13 @@
   text-transform: uppercase;
 }
 
-label {
-  font-weight: 600;
-  color: #555;
-}
-
 input[type="text"],
 input[type="tel"],
 input[type="email"],
 input[type="url"] {
   width: 100%;
   padding: 0.625rem;
+  margin-top: 0.4em;
   border: 0.0625rem solid #ccc;
   border-radius: 0.3125rem;
   font-family: montserrat, sans-serif;
@@ -324,6 +329,7 @@ input[type="url"] {
 }
 .ticket-type > label {
   text-transform: uppercase;
+  margin-bottom: 0.6rem;
 }
 
 .ticket-controls {
@@ -357,9 +363,22 @@ input[type="url"] {
   padding: 0 2rem;
 }
 
+.payment-options label {
+  font-family: montserrat, sans-serif;
+  margin-top: 1rem;
+}
+
 .banking-qr-image {
   display: none;
 }
+
+.banking-qr-image p {
+  color: #ff0000;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 .banking-qr-image.show {
   display: inline-block;
 }

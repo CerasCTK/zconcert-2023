@@ -16,7 +16,7 @@ const irisPrice = {
   single: 289000,
   combo3: 279000,
   combo5: 269000,
-}
+};
 
 // The quantity of ticket
 window.incrementTicket = (ticketId) => {
@@ -46,7 +46,7 @@ const getPerTicPrice = (numOfTics, ticketPrice) => {
   if (numOfTics >= 3) return ticketPrice.combo3;
   if (numOfTics >= 1) return ticketPrice.single;
   else return 0;
-}
+};
 
 const updateTotalPrice = () => {
   const numOfLotus = getNumOfTics("lotusTickets");
@@ -54,7 +54,8 @@ const updateTotalPrice = () => {
   const numOfIris = getNumOfTics("irisTickets");
 
   const totalLotusPrice = numOfLotus * getPerTicPrice(numOfLotus, lotusPrice);
-  const totalJasminePrice = numOfJasmine * getPerTicPrice(numOfJasmine, jasminePrice);
+  const totalJasminePrice =
+    numOfJasmine * getPerTicPrice(numOfJasmine, jasminePrice);
   const totalIrisPrice = numOfIris * getPerTicPrice(numOfIris, irisPrice);
 
   const totalPrice = totalLotusPrice + totalJasminePrice + totalIrisPrice;
