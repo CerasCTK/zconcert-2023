@@ -29,6 +29,9 @@
   padding: 1rem;
   border-radius: 10px;
 }
+.popup-wrapper::-webkit-scrollbar {
+  display: none;
+}
 
 .popup-close-button {
   position: absolute;

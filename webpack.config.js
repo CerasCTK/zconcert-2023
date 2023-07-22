@@ -12,11 +12,12 @@ module.exports = {
       "./src/styles/style.css",
     ],
     util: [
-      "./src/scripts/utils/popup/popup-utils.js"
+      "./src/scripts/utils/popup/popup-utils.js",
+      "./src/scripts/utils/google-sheet/google-sheet.js",
     ],
     bundle: [
-      "./src/scripts/assets.js",
       "./src/scripts/startup.js",
+      "./src/scripts/assets.js",
       "./src/scripts/navbar.js",
       "./src/scripts/history.js",
       "./src/scripts/vocal.js",
