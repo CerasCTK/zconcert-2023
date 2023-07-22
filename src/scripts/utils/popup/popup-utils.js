@@ -134,6 +134,11 @@ export class Popup {
       return this;
     };
 
+    hideCloseButton = () => {
+      this.#popup.closeButton.style.display = "none";
+      return this;
+    }
+
     build = () => {
       return this.#popup;
     };

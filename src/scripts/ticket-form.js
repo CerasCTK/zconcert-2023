@@ -32,12 +32,24 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
   const jasmineInput  = document.getElementById("jasmineTickets");
   const irisInput = document.getElementById("irisTickets");
 
-  // Total
+  // Total price
   const totalPrice = document.getElementById("totalPriceNum");
+
+  // Register ticket form
+  const orderTicketForm = document.getElementById("orderTicketForm");
 
   // Popup to show benefit details
   const benefitOpener = document.getElementById("benefitOpener");
   const benefitContent = document.getElementById("benefitContent");
+
+  // Popup when customer click submit button
+  const loading = document.getElementById("submit-loading");
+  const success = document.getElementById("submit-success");
+  const failure = document.getElementById("submit-failure");
+
+  // Banking QR element
+  const qrElement = document.getElementById("banking-qr");
+  const qrImgElement =  document.getElementById("banking-qr-image");
 
   // Utils
   const getNumOfTics = (ticketInput) => {
@@ -67,6 +79,7 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
         break;
     }
 
+    updateQrImage();
     updateTotalPrice();
   }
 
@@ -94,7 +107,7 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
   }
 
   const updateTotalPrice = () => {
-    document.getElementById("totalPriceNum").innerText = calculateTotalPrice().toLocaleString();
+    totalPrice.innerText = calculateTotalPrice().toLocaleString();
   };
 
   // Call updateTotalPrice() on page load in case tickets are pre-filled
@@ -102,18 +115,45 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
     updateTotalPrice();
   });
 
-  // Show QR code when click to banking radio button
+  const generateBankingInfo = () => {
+    let info= "";
+    const space = "%20"
 
+    const fullName = fullNameInput.value;
+    const phoneNumber =  phoneNumberInput.value;
+
+    const lotus = getNumOfTics(lotusInput);
+    const jasmine = getNumOfTics(jasmineInput);
+    const iris = getNumOfTics(irisInput);
+
+    if (!fullName) return "";
+    if (!phoneNumber) return "";
+    if (!lotus && !jasmine && !iris) return "";
+
+    info += fullName + space + phoneNumber + space;
+
+    if (lotus !== 0) info += "l-" + lotus + space;
+    if (jasmine !== 0) info += "j-" + jasmine + space;
+    if (iris !== 0) info += "i-" + iris + space;
+
+    // Remove space char at last
+    info = info.slice(0, -space.length);
+
+    return info;
+  }
+
+  const updateQrImage = () => {
+    qrImgElement.src = `https://img.vietqr.io/image/MB-0852362511-compact2.png?amount=${calculateTotalPrice()}&addInfo=${generateBankingInfo()}&accountName=ZConcert2023`;
+  }
+
+  // Show QR code when click to banking radio button
   window.handleChange = ({ value }) => {
-    const imageBankingEle = document.getElementById("banking-qr");
     if (!value) return;
-    if (value === "banking") {
-      // generateQrCode(imageBankingEle);
-      imageBankingEle.classList.add("show");
-    }
-    else imageBankingEle.classList.remove("show");
+    if (value === "banking") qrElement.classList.add("show");
+    else qrElement.classList.remove("show");
   };
 
+  // Setup benefit popup
   const benefitPopup = new Popup.PopupBuilder(benefitContent)
     .closeOnClickOutside()
     .build();
@@ -121,26 +161,29 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
     benefitPopup.show();
   });
 
-  const orderTicketForm = document.getElementById("orderTicketForm");
+  // Setup loading, success, failure popup
+  const loadingPopup = new Popup.PopupBuilder(loading).hideCloseButton().build();
+  const successPopup = new Popup.PopupBuilder(success).hideCloseButton().build();
+  const failurePopup = new Popup.PopupBuilder(failure).hideCloseButton().build();
 
   orderTicketForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const form = event.target;
+    loadingPopup.show();
 
-    const fullName = form.querySelector("input#fullName").value;
-    const phoneNumber = form.querySelector("input#phoneNumber").value;
-    const email = form.querySelector("input#email").value;
-    const facebook = form.querySelector("input#facebook").value;
+    const fullName = fullNameInput.value;
+    const phoneNumber = phoneNumberInput.value;
+    const email = emailInput.value;
+    const facebook = facebookInput.value;
 
-    const lotus = form.querySelector("input#lotusTickets").value;
-    const jasmine = form.querySelector("input#jasmineTickets").value;
-    const iris = form.querySelector("input#irisTickets").value;
+    const lotus = getNumOfTics(lotusInput);
+    const jasmine = getNumOfTics(jasmineInput);
+    const iris = getNumOfTics(irisInput);
     if (lotus === 0 && jasmine === 0 && iris === 0) return;
 
     const total = calculateTotalPrice(lotus, jasmine, iris);
 
-    const payment = form.querySelector("input[name=\"payment\"]:checked");
+    const payment = document.querySelector("input[name=\"payment\"]:checked");
     if (!payment) return;
     const paymentMethod = payment.value;
 
@@ -148,11 +191,23 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
     writeToSheet(newRow, {}, registerSuccess, registerFailure);
   });
 
-  const registerSuccess = (result) => {
-    console.log(result);
-  }
+  const registerSuccess = (_result) => {
+    loadingPopup.hide();
+    successPopup.show();
+    setTimeout(() => {
+      successPopup.hide();
 
-  const registerFailure = (error) => {
-    console.log(error);
-  }
+      // Refresh page
+    }, 2000);
+  };
+
+  const registerFailure = (_error) => {
+    loadingPopup.hide();
+    failurePopup.show();
+    setTimeout(() => {
+      failurePopup.hide();
+
+      // Refresh page
+    }, 2000);
+  };
 }());
