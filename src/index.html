@@ -516,7 +516,7 @@
                   <button
                     type="button"
                     class="ticket-btn"
-                    onclick="decrementTicket('lotusTickets')"
+                    onclick="updateQuantity('lotus', decrement)"
                   >
                     -
                   </button>
@@ -531,7 +531,7 @@
                   <button
                     type="button"
                     class="ticket-btn"
-                    onclick="incrementTicket('lotusTickets')"
+                    onclick="updateQuantity('lotus', increment)"
                   >
                     +
                   </button>
@@ -543,7 +543,7 @@
                   <button
                     type="button"
                     class="ticket-btn"
-                    onclick="decrementTicket('jasmineTickets')"
+                    onclick="updateQuantity('jasmine', decrement)"
                   >
                     -
                   </button>
@@ -558,7 +558,7 @@
                   <button
                     type="button"
                     class="ticket-btn"
-                    onclick="incrementTicket('jasmineTickets')"
+                    onclick="updateQuantity('jasmine', increment)"
                   >
                     +
                   </button>
@@ -570,7 +570,7 @@
                   <button
                     type="button"
                     class="ticket-btn"
-                    onclick="decrementTicket('irisTickets')"
+                    onclick="updateQuantity('iris', decrement)"
                   >
                     -
                   </button>
@@ -585,7 +585,7 @@
                   <button
                     type="button"
                     class="ticket-btn"
-                    onclick="incrementTicket('irisTickets')"
+                    onclick="updateQuantity('iris', increment)"
                   >
                     +
                   </button>
@@ -595,7 +595,7 @@
           </div>
           <div class="form-item">
             <label for="totalPrice">Tổng tiền:</label>
-            <div id="totalPrice">0 VNĐ</div>
+            <div id="totalPrice"><span id="totalPriceNum">0</span> VNĐ</div>
           </div>
 
           <div class="form-item">
@@ -626,7 +626,7 @@
             </div>
           </div>
           <img
-            src="assets/img/ticket/banking-qrcode.jpg"
+            src="https://img.vietqr.io/image/MB-0852362511-compact.png"
             alt="Banking QR code image"
             class="banking-qr-image"
             id="banking-qr"
