@@ -2,7 +2,7 @@ import { Popup } from "./utils/popup/popup-utils";
 import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
 
 (function () {
-// Ticket price
+  // Ticket price
   const lotusPrice = {
     single: 409000,
     combo3: 399000,
@@ -19,28 +19,27 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
     single: 289000,
     combo3: 279000,
     combo5: 269000,
-  }
+  };
 
-// Basic information
+  // Basic information
   const fullNameInput = document.getElementById("fullName");
   const phoneNumberInput = document.getElementById("phoneNumber");
   const emailInput = document.getElementById("email");
   const facebookInput = document.getElementById("facebook");
 
-// Ticket order
+  // Ticket order
   const lotusInput = document.getElementById("lotusTickets");
   const jasmineInput  = document.getElementById("jasmineTickets");
   const irisInput = document.getElementById("irisTickets");
 
-
-// Total
+  // Total
   const totalPrice = document.getElementById("totalPriceNum");
 
-// Popup to show benefit details
+  // Popup to show benefit details
   const benefitOpener = document.getElementById("benefitOpener");
   const benefitContent = document.getElementById("benefitContent");
 
-// Utils
+  // Utils
   const getNumOfTics = (ticketInput) => {
     return parseInt(ticketInput.value);
   };
@@ -52,7 +51,7 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
     else return 0;
   }
 
-// Event update quantity of ticket
+  // Event update quantity of ticket
   window.updateQuantity = (ticket, handle) => {
     switch (ticket) {
       case "lotus":
@@ -98,12 +97,12 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
     document.getElementById("totalPriceNum").innerText = calculateTotalPrice().toLocaleString();
   };
 
-// Call updateTotalPrice() on page load in case tickets are pre-filled
+  // Call updateTotalPrice() on page load in case tickets are pre-filled
   window.addEventListener("load", () => {
     updateTotalPrice();
   });
 
-// Show QR code when click to banking radio button
+  // Show QR code when click to banking radio button
 
   window.handleChange = ({ value }) => {
     const imageBankingEle = document.getElementById("banking-qr");
@@ -156,4 +155,4 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
   const registerFailure = (error) => {
     console.log(error);
   }
-}())
+}());
