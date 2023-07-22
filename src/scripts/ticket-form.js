@@ -132,9 +132,9 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
 
     info += fullName + space + phoneNumber + space;
 
-    if (lotus !== 0) info += "l-" + lotus + space;
-    if (jasmine !== 0) info += "j-" + jasmine + space;
-    if (iris !== 0) info += "i-" + iris + space;
+    if (lotus !== 0) info += "l" + lotus + space;
+    if (jasmine !== 0) info += "j" + jasmine + space;
+    if (iris !== 0) info += "i" + iris + space;
 
     // Remove space char at last
     info = info.slice(0, -space.length);
