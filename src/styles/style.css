@@ -726,23 +726,29 @@ input[type="submit"]:hover {
   .nav-list .right {
     position: fixed;
     padding: 10px 0;
-    translate: -100%;
-    top: 50px;
-    right: 0;
+    top: 40px;
+    right: -100%;
     flex-direction: column;
-    background-color: pink;
-    min-width: 100%;
+    max-width: 50%;
+    height: max-content;
+    transition: right 200ms ease-in-out;
   }
 
   .nav-list .right .nav-item {
     margin-right: 5px;
   }
   .right .nav-item > a {
-    font-size: 25px !important;
+    font-size: 1rem !important;
     margin-left: 1rem;
+    float: right;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
   .nav-item:not(:last-child) > a {
     margin-bottom: 10px;
+  }
+
+  .hamburger-menu:has(input:checked) + .right-navbar {
+    right: 0;
   }
 
   /* Intro */
