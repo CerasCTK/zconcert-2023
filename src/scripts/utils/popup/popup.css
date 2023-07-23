@@ -15,8 +15,7 @@
 }
 
 .popup-wrapper {
-  background-image: url("../../../assets/img/background/bg-popup.jpg");
-  background-size: cover;
+  background-color: #fff;
   position: absolute;
   z-index: 2;
   top: 50%;

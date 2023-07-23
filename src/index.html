@@ -223,6 +223,8 @@
               id="fullName"
               placeholder="Nguyễn Văn A"
               pattern="[A-Za-zÀ-Ỹà-ỹ\s]+"
+              title="Nhập kí tự chỉ gồm chữ cái alphabet"
+              oninvalid="this.setCustomValidity('(*) Vui lòng điền đầy đủ họ tên.')"
               required
             />
           </div>
@@ -234,6 +236,8 @@
               name="phoneNumber"
               placeholder="0123456789"
               pattern="[0-9]{10}"
+              title="Nhập đúng kí tự 10 chữ số"
+              oninvalid="this.setCustomValidity('(*) Vui lòng nhập số điện thoại.')"
               required
             />
           </div>
@@ -244,6 +248,8 @@
               id="email"
               name="email"
               placeholder="example@gmail.com"
+              title="Nhập đúng cú pháp example@gmail.com"
+              oninvalid="this.setCustomValidity('(*) Vui lòng nhập địa chỉ Email.')"
               required
             />
           </div>
@@ -254,6 +260,8 @@
               id="facebook"
               name="facebook"
               placeholder="Facebook Address"
+              title="Nhập đúng định dạng link facebook cá nhân"
+              oninvalid="this.setCustomValidity('(*) Vui lòng gán link FB cá nhân của bạn.')"
               required
             />
           </div>
@@ -457,30 +465,40 @@
         </div>
         <!-- Investment contact -->
         <div class="middle">
-          <h3>Liên hệ tài trợ sự kiện</h3>
-          <div>
-            <a href="mailto:fnjghfgjhjfgjhf@gmail.com"
-              >fnjghfgjhjfgjhf@gmail.com</a
-            >
-          </div>
-          <div>
-            <a href="mailto:fnjghfgjhjfgjhf@gmail.com"
-              >fnjghfgjhjfgjhf@gmail.com</a
-            >
+          <div class="middle-container">
+            <h2>Liên hệ tài trợ sự kiện</h2>
+            <div>
+              <i class="fa-regular fa-envelope"></i>
+              <a href="mailto:fnjghfgjhjfgjhf@gmail.com"
+                >fnjghfgjhjfgjhf@gmail.com</a
+              >
+            </div>
+            <div>
+              <i class="fa-regular fa-envelope"></i>
+              <a href="mailto:fnjghfgjhjfgjhf@gmail.com"
+                >fnjghfgjhjfgjhf@gmail.com</a
+              >
+            </div>
+            <div style="text-align: center; color: red">(Chưa gửi Info)</div>
           </div>
         </div>
         <!-- Marketing contact -->
         <div class="right">
-          <h3>Liên hệ hỗ trợ truyền thông</h3>
-          <div>
-            <a href="mailto:fnjghfgjhjfgjhf@gmail.com"
-              >fnjghfgjhjfgjhf@gmail.com</a
-            >
-          </div>
-          <div>
-            <a href="mailto:fnjghfgjhjfgjhf@gmail.com"
-              >fnjghfgjhjfgjhf@gmail.com</a
-            >
+          <div class="right-container">
+            <h2>Liên hệ hỗ trợ truyền thông</h2>
+            <div>
+              <i class="fa-regular fa-envelope"></i>
+              <a href="mailto:fnjghfgjhjfgjhf@gmail.com"
+                >fnjghfgjhjfgjhf@gmail.com</a
+              >
+            </div>
+            <div>
+              <i class="fa-regular fa-envelope"></i>
+              <a href="mailto:fnjghfgjhjfgjhf@gmail.com"
+                >fnjghfgjhjfgjhf@gmail.com</a
+              >
+            </div>
+            <div style="text-align: center; color: red">(Chưa gửi Info)</div>
           </div>
         </div>
       </div>
@@ -510,7 +528,7 @@
         cơ hội vào cổng chưa? Hãy nhanh tay để sở hữu ngay một chiếc vé may mắn
         để đắm chìm trong âm nhạc thôi nào!
       </p>
-      <p>- Thời gian:</p>
+      <p>- Thời gian: 12.08.2023</p>
       <p>
         - Địa điểm: Đại Việt Palace - 145 Dương Đình Nghệ, phường Tân Sơn, thành
         phố Thanh Hoá
@@ -760,8 +778,17 @@
       </div>
     </div>
     <!-- Popup Form Submit -->
-    <div id="submit-loading">Loading popup</div>
-    <div id="submit-success">Success popup</div>
-    <div id="submit-failure">Failure popup</div>
+    <div id="submit-loading">
+      ĐANG GỬI DỮ LIỆU
+      <i class="fa-solid fa-spinner fa-spin" style="color: #f198cc"></i>
+    </div>
+    <div id="submit-success">
+      ĐĂNG KÝ THÀNH CÔNG
+      <i class="fa-regular fa-circle-check" style="color: #f198cc"></i>
+    </div>
+    <div id="submit-failure">
+      ĐÃ XẢY RA LỖI
+      <i class="fa-regular fa-circle-xmark fa-shake" style="color: #ff0000"></i>
+    </div>
   </body>
 </html>
