@@ -28,12 +28,18 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
   const facebookInput = document.getElementById("facebook");
 
   // Ticket order
+  const decBtn = document.querySelectorAll("button.dec-quan-btn");
+  const incBtn = document.querySelectorAll("button.inc-quan-btn");
+
   const lotusInput = document.getElementById("lotusTickets");
   const jasmineInput  = document.getElementById("jasmineTickets");
   const irisInput = document.getElementById("irisTickets");
 
   // Total price
   const totalPrice = document.getElementById("totalPriceNum");
+
+  // Radio button select payment method
+  const paymentRadioBtn = document.querySelectorAll("input[name=\"payment\"]");
 
   // Register ticket form
   const orderTicketForm = document.getElementById("orderTicketForm");
@@ -42,7 +48,7 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
   const benefitOpener = document.getElementById("benefitOpener");
   const benefitContent = document.getElementById("benefitContent");
 
-  // Popup when customer click submit button
+  // State popup when customer click submit button
   const loading = document.getElementById("submit-loading");
   const success = document.getElementById("submit-success");
   const failure = document.getElementById("submit-failure");
@@ -64,7 +70,19 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
   }
 
   // Event update quantity of ticket
-  window.updateQuantity = (ticket, handle) => {
+  decBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      updateQuantity(btn.name, decrement);
+    });
+  });
+
+  incBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      updateQuantity(btn.name, increment);
+    });
+  });
+
+  const updateQuantity = (ticket, handle) => {
     switch (ticket) {
       case "lotus":
         handle(lotusInput);
@@ -83,12 +101,12 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
     updateTotalPrice();
   }
 
-  window.increment = (ticketInput) => {
+  const increment = (ticketInput) => {
     const currentValue = getNumOfTics(ticketInput);
     ticketInput.value = currentValue + 1;
   }
 
-  window.decrement = (ticketInput) => {
+  const decrement = (ticketInput) => {
     const currentValue = getNumOfTics(ticketInput);
     if (currentValue === 0) return;
     ticketInput.value = currentValue - 1;
@@ -147,7 +165,13 @@ import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
   }
 
   // Show QR code when click to banking radio button
-  window.handleChange = ({ value }) => {
+  paymentRadioBtn.forEach((btn) => {
+    console.log(btn);
+    btn.addEventListener("click", (event) => handleChange(event));
+  })
+
+  const handleChange = (event) => {
+    const { value } = event.target;
     if (!value) return;
     if (value === "banking") qrElement.classList.add("show");
     else qrElement.classList.remove("show");

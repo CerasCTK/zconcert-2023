@@ -518,8 +518,8 @@
                 <div class="ticket-controls">
                   <button
                     type="button"
-                    class="ticket-btn"
-                    onclick="updateQuantity('lotus', decrement)"
+                    class="ticket-btn dec-quan-btn"
+                    name="lotus"
                   >
                     -
                   </button>
@@ -533,8 +533,8 @@
                   />
                   <button
                     type="button"
-                    class="ticket-btn"
-                    onclick="updateQuantity('lotus', increment)"
+                    class="ticket-btn inc-quan-btn"
+                    name="lotus"
                   >
                     +
                   </button>
@@ -545,8 +545,8 @@
                 <div class="ticket-controls">
                   <button
                     type="button"
-                    class="ticket-btn"
-                    onclick="updateQuantity('jasmine', decrement)"
+                    class="ticket-btn dec-quan-btn"
+                    name="jasmine"
                   >
                     -
                   </button>
@@ -560,8 +560,8 @@
                   />
                   <button
                     type="button"
-                    class="ticket-btn"
-                    onclick="updateQuantity('jasmine', increment)"
+                    class="ticket-btn inc-quan-btn"
+                    name="jasmine"
                   >
                     +
                   </button>
@@ -572,8 +572,8 @@
                 <div class="ticket-controls">
                   <button
                     type="button"
-                    class="ticket-btn"
-                    onclick="updateQuantity('iris', decrement)"
+                    class="ticket-btn dec-quan-btn"
+                    name="iris"
                   >
                     -
                   </button>
@@ -587,8 +587,8 @@
                   />
                   <button
                     type="button"
-                    class="ticket-btn"
-                    onclick="updateQuantity('iris', increment)"
+                    class="ticket-btn inc-quan-btn"
+                    name="iris"
                   >
                     +
                   </button>
@@ -610,7 +610,6 @@
                   id="banking"
                   name="payment"
                   value="banking"
-                  onchange="handleChange(this);"
                   required
                 />
                 Chuyển khoản Ngân hàng (Smart Banking)
@@ -621,7 +620,6 @@
                   id="cash"
                   name="payment"
                   value="cash"
-                  onchange="handleChange(this)"
                   required
                 />
                 Thanh toán tiền mặt (Cash)
