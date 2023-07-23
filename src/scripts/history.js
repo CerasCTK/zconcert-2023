@@ -1,5 +1,6 @@
 import { Popup } from "./utils/popup/popup-utils";
 
+
 // Setup for history 2020
 const his20Img = document.getElementById("his20Img");
 const his20Content = document.getElementById("his20Content");
@@ -25,4 +26,5 @@ const his23Content = document.getElementById("his23Content");
 const his23Popup = new Popup.PopupBuilder(his23Content).closeOnClickOutside().build();
 his23Img.addEventListener("click", (_event) => {
   his23Popup.show();
-})
+});
+

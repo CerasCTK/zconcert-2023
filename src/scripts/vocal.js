@@ -1,3 +1,4 @@
+
 // Play music when hover to vocal img
 const hoverImages = document.querySelectorAll(".hover-image");
 const hoverMusics = document.querySelectorAll(".hover-music");
@@ -14,3 +15,4 @@ hoverImages.forEach((image, index) => {
     audio.currentTime = 0; // Resets the audio to the beginning
   });
 });
+

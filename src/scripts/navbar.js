@@ -8,3 +8,6 @@ window.onscroll = () => {
     navbarElement.classList.remove("bg-scroll-navbar");
   }
 };
+
+
+

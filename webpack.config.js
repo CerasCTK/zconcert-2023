@@ -22,7 +22,6 @@ module.exports = {
       "./src/scripts/history.js",
       "./src/scripts/vocal.js",
       "./src/scripts/ticket-form.js",
-      "./src/scripts/footer.js",
     ],
   },
   output: {
