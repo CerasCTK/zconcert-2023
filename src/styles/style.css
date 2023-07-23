@@ -50,6 +50,10 @@
   margin-right: 3rem;
 }
 
+.hamburger-menu {
+  display: none;
+}
+
 /* Introduce */
 #intro {
   height: 100vh;
@@ -632,6 +636,70 @@ input[type="submit"]:hover {
 
   .nav-list.right {
     display: none;
+  }
+
+  .hamburger-menu {
+    display: inline;
+  }
+
+  .hamburger-menu::before,
+  .hamburger-menu::after,
+  .hamburger-menu input {
+    content: "";
+    width: 20px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 9999px;
+    transform-origin: left center;
+    transition: opacity 200ms ease-in-out, width 200ms ease-in-out;
+  }
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: max-content;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    z-index: 3;
+    cursor: pointer;
+  }
+  .hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+  }
+  .hamburger-menu:has(input:checked)::before {
+    transform: translateY(-90%);
+    rotate: 45deg;
+  }
+  .hamburger-menu:has(input:checked)::after {
+    transform: translateY(90%);
+    rotate: -45deg;
+  }
+  .hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+  }
+
+  .nav-list .right {
+    display: block;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: blue;
+
+  }
+  .nav-list .right .nav-item {
+    margin-right: 5px;
+
+  }
+  .nav-item a {
+    float: right;
+    margin-bottom: 10px;
   }
 
   /* Intro */
