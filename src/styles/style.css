@@ -75,8 +75,9 @@
 }
 
 .intro-container .masthead-script {
+  display: inline-block;
+  width: 60%;
   margin: 1.3rem 0 7rem 0;
-  letter-spacing: 0.08rem;
   font-size: 1.3rem;
   font-family: montserrat, sans-serif;
 }
@@ -491,12 +492,10 @@ input[type="submit"]:hover {
   align-items: center;
 }
 
-.social-contact-item:nth-child(1) a:focus,
 .social-contact-item:nth-child(1) a:hover {
   background: #486ba3;
 }
 
-.social-contact-item:nth-child(2) a:focus,
 .social-contact-item:nth-child(2) a:hover {
   background: linear-gradient(
     45deg,
@@ -508,32 +507,26 @@ input[type="submit"]:hover {
   );
 }
 
-.social-contact-item:nth-child(3) a:focus,
 .social-contact-item:nth-child(3) a:hover {
   background: #183153;
 }
 
-.social-contact-item:nth-child(4) a:focus,
 .social-contact-item:nth-child(4) a:hover {
   background: #ff0000;
 }
 
-.social-contact-item:nth-child(1) a:focus i,
 .social-contact-item:nth-child(1) a:hover i {
   color: white;
 }
 
-.social-contact-item:nth-child(2) a:focus i,
 .social-contact-item:nth-child(2) a:hover i {
   color: white;
 }
 
-.social-contact-item:nth-child(3) a:focus i,
 .social-contact-item:nth-child(3) a:hover i {
   color: white;
 }
 
-.social-contact-item:nth-child(4) a:focus i,
 .social-contact-item:nth-child(4) a:hover i {
   color: white;
 }
@@ -546,6 +539,16 @@ input[type="submit"]:hover {
 
 .copyright-container a {
   text-decoration: none;
+}
+
+/* Popup Welcome */
+/* #startup {
+  background-image: url(../assets/img/background/startup.jpg);
+  background-size: contain;
+} */
+#startup h2 {
+  font-family: "Italianno", cursive;
+  font-size: 3rem;
 }
 
 /* RESPONSIVE FOR TABLET */
