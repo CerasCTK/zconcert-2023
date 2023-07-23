@@ -255,7 +255,7 @@
 }
 
 #benefitContent img {
-  height: 580px;
+  height: 36rem;
 }
 
 /* Section Form */
@@ -550,11 +550,24 @@ input[type="submit"]:hover {
     font-size: 1.1rem;
   }
 
+  /* History */
+  .his-item img {
+    width: 60%;
+  }
+
   /* Vocal */
   .vocal-item {
-    width: 40%;
+    width: 23%;
     margin: 1rem;
     padding: 1rem;
+  }
+
+  .vocal-item img {
+    width: 9rem;
+  }
+
+  #benefitContent img {
+    height: 30rem;
   }
 
   /* Ticket */
@@ -564,6 +577,20 @@ input[type="submit"]:hover {
 
   .ticket-info-container .middle-container img {
     width: 85%;
+  }
+
+  #banking-qr-image {
+    width: 16rem;
+  }
+
+  /* Contact */
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-contact img {
+    width: 12rem;
   }
 }
 
@@ -575,31 +602,37 @@ input[type="submit"]:hover {
     padding: 1rem;
   }
   .nav-list .left .nav-link {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
-  .right .nav-item:not(:last-child) {
-    margin-right: 0;
-    margin-bottom: 1rem;
+  /* Intro */
+  .intro-container {
+    margin-left: 1rem;
   }
-
   .intro-container .masthead-heading {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .intro-container .masthead-script {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
+  /* History */
+  .his-content-container {
+    padding: 0 0.5rem;
+  }
+
+  /* Vocal */
   .vocal-list {
     flex-direction: column;
     align-items: center;
   }
 
   .vocal-item {
-    width: 80%;
+    width: 70%;
   }
 
+  /* Form */
   .ticket-info-container .top-container {
     padding: 0 0.5rem;
   }
