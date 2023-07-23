@@ -31,14 +31,14 @@ const decBtn = document.querySelectorAll("button.dec-quan-btn");
 const incBtn = document.querySelectorAll("button.inc-quan-btn");
 
 const lotusInput = document.getElementById("lotusTickets");
-const jasmineInput  = document.getElementById("jasmineTickets");
+const jasmineInput = document.getElementById("jasmineTickets");
 const irisInput = document.getElementById("irisTickets");
 
 // Total price
 const totalPrice = document.getElementById("totalPriceNum");
 
 // Radio button select payment method
-const paymentRadioBtn = document.querySelectorAll("input[name=\"payment\"]");
+const paymentRadioBtn = document.querySelectorAll('input[name="payment"]');
 
 // Register ticket form
 const orderTicketForm = document.getElementById("orderTicketForm");
@@ -54,7 +54,10 @@ const failure = document.getElementById("submit-failure");
 
 // Banking QR element
 const qrElement = document.getElementById("banking-qr");
-const qrImgElement =  document.getElementById("banking-qr-image");
+const qrImgElement = document.getElementById("banking-qr-image");
+
+// Cash notice element
+const cashElement = document.getElementById("cash-notice");
 
 // Utils
 const getNumOfTics = (ticketInput) => {
@@ -66,7 +69,7 @@ const getPerTicPrice = (numOfTics, ticketPrice) => {
   if (numOfTics >= 3) return ticketPrice.combo3;
   if (numOfTics >= 1) return ticketPrice.single;
   else return 0;
-}
+};
 
 // Event update quantity of ticket
 decBtn.forEach((btn) => {
@@ -98,18 +101,18 @@ const updateQuantity = (ticket, handle) => {
 
   updateQrImage();
   updateTotalPrice();
-}
+};
 
 const increment = (ticketInput) => {
   const currentValue = getNumOfTics(ticketInput);
   ticketInput.value = currentValue + 1;
-}
+};
 
 const decrement = (ticketInput) => {
   const currentValue = getNumOfTics(ticketInput);
   if (currentValue === 0) return;
   ticketInput.value = currentValue - 1;
-}
+};
 
 const calculateTotalPrice = () => {
   const numOfLotus = getNumOfTics(lotusInput);
@@ -117,11 +120,12 @@ const calculateTotalPrice = () => {
   const numOfIris = getNumOfTics(irisInput);
 
   const totalLotusPrice = numOfLotus * getPerTicPrice(numOfLotus, lotusPrice);
-  const totalJasminePrice = numOfJasmine * getPerTicPrice(numOfJasmine, jasminePrice);
+  const totalJasminePrice =
+    numOfJasmine * getPerTicPrice(numOfJasmine, jasminePrice);
   const totalIrisPrice = numOfIris * getPerTicPrice(numOfIris, irisPrice);
 
   return totalLotusPrice + totalJasminePrice + totalIrisPrice;
-}
+};
 
 const updateTotalPrice = () => {
   totalPrice.innerText = calculateTotalPrice().toLocaleString();
@@ -133,11 +137,11 @@ window.addEventListener("load", () => {
 });
 
 const generateBankingInfo = () => {
-  let info= "";
-  const space = "%20"
+  let info = "";
+  const space = "%20";
 
   const fullName = fullNameInput.value;
-  const phoneNumber =  phoneNumberInput.value;
+  const phoneNumber = phoneNumberInput.value;
 
   const lotus = getNumOfTics(lotusInput);
   const jasmine = getNumOfTics(jasmineInput);
@@ -157,23 +161,27 @@ const generateBankingInfo = () => {
   info = info.slice(0, -space.length);
 
   return info;
-}
+};
 
 const updateQrImage = () => {
   qrImgElement.src = `https://img.vietqr.io/image/MB-0852362511-compact2.png?amount=${calculateTotalPrice()}&addInfo=${generateBankingInfo()}&accountName=ZConcert2023`;
-}
+};
 
 // Show QR code when click to banking radio button
 paymentRadioBtn.forEach((btn) => {
-  console.log(btn);
   btn.addEventListener("click", (event) => handleChange(event));
-})
+});
 
 const handleChange = (event) => {
   const { value } = event.target;
   if (!value) return;
-  if (value === "banking") qrElement.classList.add("show");
-  else qrElement.classList.remove("show");
+  if (value === "banking") {
+    qrElement.classList.add("show");
+    cashElement.classList.remove("show");
+  } else {
+    cashElement.classList.add("show");
+    qrElement.classList.remove("show");
+  }
 };
 
 // Setup benefit popup
@@ -206,11 +214,21 @@ orderTicketForm.addEventListener("submit", (event) => {
 
   const total = calculateTotalPrice(lotus, jasmine, iris);
 
-  const payment = document.querySelector("input[name=\"payment\"]:checked");
+  const payment = document.querySelector('input[name="payment"]:checked');
   if (!payment) return;
   const paymentMethod = payment.value;
 
-  const newRow = createData(fullName, phoneNumber, email, facebook, lotus, jasmine, iris, total, paymentMethod);
+  const newRow = createData(
+    fullName,
+    phoneNumber,
+    email,
+    facebook,
+    lotus,
+    jasmine,
+    iris,
+    total,
+    paymentMethod
+  );
   writeToSheet(newRow, {}, registerSuccess, registerFailure);
 });
 

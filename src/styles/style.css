@@ -297,6 +297,10 @@
 .form-item:last-child {
   text-align: center;
 }
+
+/* .form-item.demoTest {
+  text-align: center;
+} */
 .form-item > label {
   text-transform: uppercase;
 }
@@ -376,11 +380,29 @@ input[type="url"] {
   color: #ff0000;
   font-style: italic;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 .banking-qr-image.show {
-  display: inline-block;
+  display: block;
+}
+
+#banking-qr-image {
+  width: 20rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cash-notice {
+  display: none;
+}
+
+#cash-notice.show {
+  display: block;
+  color: red;
+  font-style: italic;
+  margin-bottom: 2.5rem;
 }
 
 input[type="submit"] {
@@ -455,7 +477,7 @@ input[type="submit"]:hover {
 }
 
 .contact-container .social-contact span {
-  width: 15%;
+  width: 18%;
 }
 
 .contact-container .social-contact a {
@@ -584,13 +606,13 @@ input[type="submit"]:hover {
   }
 
   /* Contact */
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-  }
 
   .brand-contact img {
     width: 12rem;
+  }
+
+  .contact-container .social-contact span {
+    width: 25%;
   }
 }
 
@@ -602,7 +624,11 @@ input[type="submit"]:hover {
     padding: 1rem;
   }
   .nav-list .left .nav-link {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .nav-list.right {
+    display: none;
   }
 
   /* Intro */
