@@ -60,4 +60,9 @@
     min-width: 300px;
     min-height: 400px;
   }
+
+  .popup-close-button {
+    top: 10px;
+    right: 10px;
+  }
 }
