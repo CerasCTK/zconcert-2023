@@ -303,9 +303,6 @@
   text-align: center;
 }
 
-/* .form-item.demoTest {
-  text-align: center;
-} */
 .form-item > label {
   text-transform: uppercase;
 }
@@ -512,7 +509,7 @@ input[type="submit"]:hover {
 }
 
 .social-contact-item:nth-child(3) a:hover {
-  background: #183153;
+  background: black;
 }
 
 .social-contact-item:nth-child(4) a:hover {
@@ -656,6 +653,11 @@ input[type="submit"]:hover {
   .contact-container .social-contact span {
     width: 25%;
   }
+
+  .contact-container > div {
+    width: 30%;
+    font-size: 80%;
+  }
 }
 
 /* RESPONSIVE FOR MOBILE */
@@ -726,11 +728,9 @@ input[type="submit"]:hover {
     top: 40px;
     right: 0;
     background: blue;
-
   }
   .nav-list .right .nav-item {
     margin-right: 5px;
-
   }
   .nav-item a {
     float: right;
@@ -762,6 +762,15 @@ input[type="submit"]:hover {
 
   .vocal-item {
     width: 70%;
+  }
+
+  /* Ticket Info */
+  .ticket-info-container .top-container table span {
+    font-size: 0.7rem;
+  }
+
+  .ticket-info-container table tr:first-child th span {
+    width: 4rem;
   }
 
   /* Form */
