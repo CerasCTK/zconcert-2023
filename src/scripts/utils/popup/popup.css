@@ -15,12 +15,13 @@
 }
 
 .popup-wrapper {
+  background-image: url("../../../assets/img/background/bg-popup.jpg");
+  background-size: cover;
   position: absolute;
   z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
   /* min-width: 600px;
     min-height: 400px; */
   max-width: 900px;
