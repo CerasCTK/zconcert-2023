@@ -153,9 +153,9 @@ const generateBankingInfo = () => {
 
   info += fullName + space + phoneNumber + space;
 
-  if (lotus !== 0) info += "l" + lotus + space;
-  if (jasmine !== 0) info += "j" + jasmine + space;
-  if (iris !== 0) info += "i" + iris + space;
+  if (lotus !== 0) info += "L" + lotus + space;
+  if (jasmine !== 0) info += "J" + jasmine + space;
+  if (iris !== 0) info += "I" + iris + space;
 
   // Remove space char at last
   info = info.slice(0, -space.length);

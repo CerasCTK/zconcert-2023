@@ -686,7 +686,7 @@ input[type="submit"]:hover {
     background-color: #333;
     border-radius: 9999px;
     transform-origin: left center;
-    transition: opacity 200ms ease-in-out, width 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out, width 200ms ease-in-out, rotate 200ms ease-in-out, translate 200ms ease-in-out, background-color 200ms ease-in-out;
   }
   .hamburger-menu {
     display: flex;
@@ -709,10 +709,12 @@ input[type="submit"]:hover {
   .hamburger-menu:has(input:checked)::before {
     transform: translateY(-90%);
     rotate: 45deg;
+    background-color: white;
   }
   .hamburger-menu:has(input:checked)::after {
     transform: translateY(90%);
     rotate: -45deg;
+    background-color: white;
   }
   .hamburger-menu input:checked {
     opacity: 0;
@@ -720,20 +722,23 @@ input[type="submit"]:hover {
   }
 
   .nav-list .right {
-    display: block;
-    flex-direction: column;
-    position: absolute;
-    top: 40px;
+    position: fixed;
+    padding: 10px 0;
+    translate: -100%;
+    top: 50px;
     right: 0;
-    background: blue;
-
+    flex-direction: column;
+    background-color: pink;
+    min-width: 100%;
   }
   .nav-list .right .nav-item {
-    margin-right: 5px;
-
+    margin: 0;
   }
-  .nav-item a {
-    float: right;
+  .right .nav-item > a {
+    font-size: 25px !important;
+    margin-left: 1rem;
+  }
+  .nav-item:not(:last-child) > a {
     margin-bottom: 10px;
   }
 
