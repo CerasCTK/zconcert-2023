@@ -20,7 +20,6 @@ import "../assets/img/background/bg-vocalist.jpg";
 import "../assets/img/brand/brand-contact.png";
 
 // ticket
-import "../assets/img/ticket/banking-qrcode.jpg";
 import "../assets/img/ticket/benefit.jpg";
 import "../assets/img/ticket/stage-map.jpg";
 
