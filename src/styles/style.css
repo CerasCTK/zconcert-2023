@@ -357,6 +357,9 @@ input[type="url"] {
   height: 1.875rem;
   cursor: pointer;
   font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ticket-btn:hover {
