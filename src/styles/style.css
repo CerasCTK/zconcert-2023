@@ -561,9 +561,13 @@ input[type="submit"]:hover {
   align-items: center;
 }
 /* Copyright */
+.copyright {
+  background-color: #a78295;
+}
 .copyright-container {
   padding: 0.5rem 2rem;
   text-align: center;
+  color: #ccc;
 }
 
 .copyright-container a {
