@@ -227,7 +227,8 @@
               id="fullName"
               placeholder="Nguyễn Văn A"
               title="Nhập kí tự chỉ gồm chữ cái alphabet"
-              oninvalid="this.setCustomValidity('(*) Vui lòng điền đầy đủ họ tên.')"
+              oninvalid='this.setCustomValidity("(*) Vui lòng điền đầy đủ họ tên.")'
+              oninput='this.setCustomValidity("")'
               required
             />
           </div>
@@ -239,7 +240,8 @@
               name="phoneNumber"
               placeholder="0947847xxx"
               title="Nhập đúng kí tự 10 chữ số"
-              oninvalid="this.setCustomValidity('(*) Vui lòng nhập số điện thoại.')"
+              oninvalid='this.setCustomValidity("(*) Vui lòng nhập số điện thoại.")'
+              oninput='this.setCustomValidity("")'
               required
             />
           </div>
@@ -251,7 +253,8 @@
               name="email"
               placeholder="example@gmail.com"
               title="Nhập đúng cú pháp example@gmail.com"
-              oninvalid="this.setCustomValidity('(*) Vui lòng nhập địa chỉ Email.')"
+              oninvalid='this.setCustomValidity("(*) Vui lòng nhập địa chỉ Email.")'
+              oninput='this.setCustomValidity("")'
               required
             />
           </div>
@@ -263,7 +266,8 @@
               name="facebook"
               placeholder="Facebook Address"
               title="Nhập đúng định dạng link facebook cá nhân"
-              oninvalid="this.setCustomValidity('(*) Vui lòng gán link FB cá nhân của bạn.')"
+              oninvalid='this.setCustomValidity("(*) Vui lòng gán link FB cá nhân của bạn.")'
+              oninput='this.setCustomValidity("")'
               required
             />
           </div>
