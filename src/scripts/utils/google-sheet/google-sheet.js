@@ -1,6 +1,6 @@
 import Sheet2API from "sheet2api-js/src/main";
 
-const url = "https://sheet2api.com/v1/VbuiSNzpQ6eR/regulartickets";
+const url = "https://sheet2api.com/v1/IdbFfjqdSsmJ/regularticketsshare";
 
 export const createData = (fullName, phoneNumber, email, facebook, numOfLotus, numOfJasmine, numOfIris, totalPrice, paymentMethod) => {
   const currentDate = new Date();
