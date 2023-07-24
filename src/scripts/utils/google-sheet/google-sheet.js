@@ -1,6 +1,6 @@
 import Sheet2API from "sheet2api-js/src/main";
 
-const url = "https://sheet2api.com/v1/WShxpglyTKNN/test";
+const url = "https://sheet2api.com/v1/VbuiSNzpQ6eR/regulartickets";
 
 export const createData = (fullName, phoneNumber, email, facebook, numOfLotus, numOfJasmine, numOfIris, totalPrice, paymentMethod) => {
   return {
