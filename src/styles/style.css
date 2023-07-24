@@ -360,7 +360,6 @@ input[type="url"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  touch-action: manipulation;
 }
 
 .ticket-btn:hover {
@@ -783,6 +782,13 @@ input[type="submit"]:hover {
 
   .vocal-item {
     width: 70%;
+  }
+
+  .vocal-item img {
+    width: 10rem;
+  }
+  .vocal-item img:hover {
+    width: 13rem;
   }
 
   /* Ticket Info */

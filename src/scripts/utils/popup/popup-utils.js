@@ -131,6 +131,10 @@ export class Popup {
         if (target === popupContainer) this.#popup.#hidePopup();
       });
 
+      window.addEventListener("touchstart", ({ target }) => {
+        if (target === popupContainer) this.#popup.#hidePopup();
+      })
+
       return this;
     };
 
