@@ -20,7 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
 }
 
 .nav-list .right {
@@ -82,6 +82,7 @@
   display: inline-block;
   width: 50%;
   margin: 1.3rem 0 7rem 0;
+  text-align: justify;
   font-size: 1.3rem;
   font-family: montserrat, sans-serif;
 }
@@ -151,7 +152,7 @@
 .vocal-container {
   text-align: center;
   font-family: montserrat-bold, sans-serif;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .vocal-container h2 {
@@ -182,8 +183,10 @@
   transition: width 1s, height 1s;
 }
 
-.vocal-item img:hover {
-  width: 15rem;
+@media only screen and (min-width: 1400px) {
+  .vocal-item img:hover {
+    width: 15rem;
+  }
 }
 
 /* Section Ticket Info */
@@ -194,7 +197,7 @@
 }
 
 .ticket-info-container {
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -432,20 +435,19 @@ input[type="submit"]:hover {
 }
 
 .contact-container {
-  padding: 3rem 1.5rem;
+  padding: 1rem;
   display: flex;
 }
 
-.contact-container .left {
-  width: 30%;
+.contact-container > div {
+  flex: 1;
 }
 
-.contact-container .middle {
-  width: 40%;
-}
-
-.contact-container .right {
-  width: 30%;
+.contact-container > div h2 {
+  font-family: montserrat-bold, sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
 }
 
 .contact-container i {
@@ -463,13 +465,13 @@ input[type="submit"]:hover {
 
 .contact-container .info-contact-item {
   display: flex;
-  margin: 1.5rem auto;
+  margin-bottom: 0.7rem;
+  align-items: center;
 }
 
 .contact-container .info-contact-item i {
   margin-right: 0.6rem;
   display: flex;
-  align-items: center;
 }
 
 .contact-container .info-contact-item:nth-child(2) div {
@@ -479,10 +481,11 @@ input[type="submit"]:hover {
 
 .contact-container .social-contact {
   display: flex;
+  margin: 0 0 1.8rem;
 }
 
 .contact-container .social-contact span {
-  width: 18%;
+  width: 13%;
 }
 
 .contact-container .social-contact a {
@@ -535,26 +538,19 @@ input[type="submit"]:hover {
   color: white;
 }
 
-.middle-container,
-.right-container {
-  padding: 0 1rem;
-}
-
-.middle-container h2,
-.right-container h2 {
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.middle-container div,
-.right-container div {
-  display: flex;
-  margin-bottom: 1.5rem;
-}
-
-.middle-container div i,
-.right-container div i {
+.middle-container div i {
   margin-right: 0.6rem;
+}
+
+.middle-container .invest-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.invest-contact-item {
+  display: flex;
+  margin-bottom: 0.7rem;
+  align-items: center;
 }
 /* Copyright */
 .copyright-container {
@@ -591,7 +587,6 @@ input[type="submit"]:hover {
 }
 
 /* RESPONSIVE FOR TABLET */
-
 @media only screen and (max-width: 768px) {
   /* Navbar */
   .nav-list .btn-menu {
@@ -612,6 +607,7 @@ input[type="submit"]:hover {
 
   .intro-container .masthead-script {
     font-size: 1.1rem;
+    width: 70%;
   }
 
   /* History */
@@ -630,11 +626,11 @@ input[type="submit"]:hover {
     width: 9rem;
   }
 
+  /* Ticket Info */
   #benefitContent img {
     height: 30rem;
   }
 
-  /* Ticket */
   .ticket-info-container .top-container {
     padding: 0 1rem;
   }
@@ -647,7 +643,15 @@ input[type="submit"]:hover {
     width: 16rem;
   }
 
+  /* Form */
+  #form {
+    padding: 1.5rem 1rem;
+  }
+
   /* Contact */
+  .contact-container {
+    padding: 2rem 1rem;
+  }
 
   .brand-contact img {
     width: 12rem;
@@ -659,7 +663,12 @@ input[type="submit"]:hover {
 
   .contact-container > div {
     width: 30%;
-    font-size: 80%;
+    font-size: 70%;
+  }
+
+  .middle-container h2,
+  .right-container h2 {
+    font-size: 1rem;
   }
 }
 
@@ -667,9 +676,7 @@ input[type="submit"]:hover {
 
 @media only screen and (max-width: 600px) {
   /* Navbar */
-  .nav-list {
-    padding: 1rem;
-  }
+
   .nav-list .left .nav-link {
     font-size: 1.5rem;
   }
@@ -770,9 +777,6 @@ input[type="submit"]:hover {
   }
 
   /* History */
-  .his-content-container {
-    padding: 0 0.5rem;
-  }
 
   /* Vocal */
   .vocal-list {
@@ -801,7 +805,7 @@ input[type="submit"]:hover {
   }
 
   .ticket-info-container .top-container {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
 
   .ticket-info-container table th,
@@ -845,25 +849,45 @@ input[type="submit"]:hover {
   /* Contact */
   .contact-container {
     flex-direction: column;
-    font-size: 125%;
+    font-size: 150%;
+  }
+
+  .contact-container h2 {
+    margin-top: 0;
   }
 
   .contact-container .left {
     width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  .contact-container .social-contact {
+    margin-bottom: 0;
   }
 
   .contact-container .social-contact span {
-    width: 23%;
+    width: 12%;
   }
 
-  .contact-container .middle {
-    width: 100%;
-    border-top: 1px solid rgba(0, 0, 0, 0.3);
-    margin-top: 1rem;
+  .contact-container.middle-container {
+    padding: 0;
   }
 
+  .invest-contact-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact-container .middle,
   .contact-container .right {
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .contact-container .middle {
+    padding: 1rem 0;
+  }
+
+  .contact-container .right {
+    padding-top: 1rem;
   }
 }
