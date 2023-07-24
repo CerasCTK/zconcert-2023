@@ -957,3 +957,10 @@ input[type="submit"]:hover {
     padding: 0 6rem;
   }
 }
+
+@media only screen and (min-width: 1000px) {
+  .vocal-item img:hover {
+    width: 15rem;
+    cursor: pointer;
+  }
+}
