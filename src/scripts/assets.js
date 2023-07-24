@@ -2,6 +2,7 @@
 import audioHoangDung from "../assets/audio/HoangDung.mp3";
 import audioKha from "../assets/audio/Kha.mp3";
 import audioDaLab from "../assets/audio/DaLAB.mp3";
+import audioUnpublic from "../assets/audio/unpublic.mp3";
 
 //// img
 // avatar-history
@@ -33,6 +34,7 @@ export {
   audioHoangDung,
   audioKha,
   audioDaLab,
+  audioUnpublic,
 
   imgAva20,
   imgAva22,
