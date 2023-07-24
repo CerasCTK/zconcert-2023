@@ -244,7 +244,8 @@ const registerSuccess = (_result) => {
     successPopup.hide();
 
     // Refresh page
-  }, 2000);
+    location.reload();
+  }, 3000);
 };
 
 const registerFailure = (_error) => {
@@ -252,7 +253,5 @@ const registerFailure = (_error) => {
   failurePopup.show();
   setTimeout(() => {
     failurePopup.hide();
-
-    // Refresh page
-  }, 2000);
+  }, 3000);
 };
