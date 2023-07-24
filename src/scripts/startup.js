@@ -8,3 +8,4 @@ const startupPopup = new Popup.PopupBuilder(startup)
   .build();
 startupPopup.wrapper.style.backgroundImage = `url(${imgBgPopup})`;
 startupPopup.wrapper.style.backgroundSize = "cover";
+startupPopup.wrapper.classList.add("popup-welcome");

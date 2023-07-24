@@ -143,6 +143,10 @@
   font-family: "Times New Roman", Times, serif;
 }
 
+.his-content-container h2 {
+  text-align: center;
+}
+
 /* Section Vocal */
 #vocal {
   background-image: url(../assets/img/background/bg-vocalist.jpg);
@@ -377,6 +381,9 @@ input[type="url"] {
 
 .payment-options label {
   font-family: montserrat, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-top: 1rem;
 }
 
@@ -437,6 +444,7 @@ input[type="submit"]:hover {
 .contact-container {
   padding: 1rem;
   display: flex;
+  gap: 0.5rem;
 }
 
 .contact-container > div {
@@ -563,6 +571,9 @@ input[type="submit"]:hover {
 }
 
 /* Popup Welcome */
+#startup {
+  text-align: justify;
+}
 #startup h2 {
   font-family: "Italianno", cursive;
   font-size: 3rem;
@@ -572,10 +583,13 @@ input[type="submit"]:hover {
 #submit-loading,
 #submit-success,
 #submit-failure {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: montserrat-bold, sans-serif;
   font-size: 1.5rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
 }
 
 #submit-loading i,
@@ -628,7 +642,7 @@ input[type="submit"]:hover {
 
   /* Ticket Info */
   #benefitContent img {
-    height: 30rem;
+    height: 65vh;
   }
 
   .ticket-info-container .top-container {
@@ -819,7 +833,7 @@ input[type="submit"]:hover {
   }
 
   #benefitContent img {
-    height: 25rem;
+    height: 24rem;
   }
 
   /* Form */
@@ -889,5 +903,53 @@ input[type="submit"]:hover {
 
   .contact-container .right {
     padding-top: 1rem;
+  }
+
+  /* Popup submit */
+  #submit-loading,
+  #submit-success,
+  #submit-failure {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+  }
+}
+
+/* Expand Ipad */
+@media only screen and (max-width: 1000px) and (min-width: 768px) {
+  /* Intro */
+  .intro-container .masthead-script {
+    width: 70%;
+  }
+  /* History */
+  .his-item img {
+    width: 55%;
+  }
+  /* Voacal */
+  .vocal-item {
+    width: 26%;
+  }
+  .vocal-item img {
+    width: 11rem;
+  }
+  /* Ticket Info */
+  .ticket-info-container .top-container {
+    padding: 0 6rem;
+  }
+  #benefitContent img {
+    height: 65vh;
+  }
+  /* Contact */
+  .contact-container .social-contact span {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1000px) {
+  /* Intro */
+  .intro-container .masthead-script {
+    width: 60%;
+  }
+  .ticket-info-container .top-container {
+    padding: 0 6rem;
   }
 }

@@ -191,11 +191,16 @@ const benefitPopup = new Popup.PopupBuilder(benefitContent)
 benefitOpener.addEventListener("click", (_event) => {
   benefitPopup.show();
 });
+benefitPopup.wrapper.classList.add("popup-benefit");
 
 // Setup loading, success, failure popup
 const loadingPopup = new Popup.PopupBuilder(loading).hideCloseButton().build();
 const successPopup = new Popup.PopupBuilder(success).hideCloseButton().build();
 const failurePopup = new Popup.PopupBuilder(failure).hideCloseButton().build();
+
+loadingPopup.wrapper.classList.add("popup-reg-state");
+successPopup.wrapper.classList.add("popup-reg-state");
+failurePopup.wrapper.classList.add("popup-reg-state");
 
 orderTicketForm.addEventListener("submit", (event) => {
   event.preventDefault();
