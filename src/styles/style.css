@@ -409,6 +409,13 @@ input[type="url"] {
   margin-right: auto;
 }
 
+#cash-qr-image {
+  width: 20rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #cash-notice {
   display: none;
 }
@@ -658,6 +665,10 @@ input[type="submit"]:hover {
   }
 
   #banking-qr-image {
+    width: 16rem;
+  }
+
+  #cash-qr-image {
     width: 16rem;
   }
 

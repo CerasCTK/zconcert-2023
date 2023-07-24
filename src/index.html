@@ -226,7 +226,6 @@
               name="fullName"
               id="fullName"
               placeholder="Nguyễn Văn A"
-              pattern="[A-Za-zÀ-Ỹà-ỹ\s]+"
               title="Nhập kí tự chỉ gồm chữ cái alphabet"
               oninvalid="this.setCustomValidity('(*) Vui lòng điền đầy đủ họ tên.')"
               required
@@ -239,7 +238,6 @@
               id="phoneNumber"
               name="phoneNumber"
               placeholder="0123456789"
-              pattern="[0-9]{10}"
               title="Nhập đúng kí tự 10 chữ số"
               oninvalid="this.setCustomValidity('(*) Vui lòng nhập số điện thoại.')"
               required
@@ -398,6 +396,11 @@
           </div>
 
           <div id="cash-notice">
+            <img
+                src="https://img.vietqr.io/image/MB-0852362511-compact.png"
+                alt="Banking QR code image"
+                id="cash-qr-image"
+            />
             (*)Vui lòng thanh toán tại quầy khi đến lấy vé!
           </div>
           <div class="form-item">
