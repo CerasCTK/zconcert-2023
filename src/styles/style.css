@@ -300,10 +300,10 @@
   margin-bottom: 1.25rem;
   font-family: montserrat-bold, sans-serif;
 }
-.form-item:nth-child(6) {
+.form-item:nth-child(7) {
   display: flex;
 }
-.form-item:nth-child(6) div {
+.form-item:nth-child(7) div {
   padding-left: 1rem;
 }
 .form-item:last-child {
@@ -316,7 +316,6 @@
 
 input[type="text"],
 input[type="tel"],
-input[type="email"],
 input[type="url"] {
   width: 100%;
   padding: 0.625rem;
@@ -418,6 +417,10 @@ input[type="url"] {
 
 #cash-notice {
   display: none;
+}
+
+#cash-notice .content {
+  color: red;
 }
 
 #cash-notice.show {
