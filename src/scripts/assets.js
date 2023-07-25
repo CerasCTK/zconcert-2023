@@ -22,7 +22,7 @@ import imgBgPopup from "../assets/img/background/bg-popup.jpg";
 import imgBrandContact from "../assets/img/brand/brand-contact.png";
 
 // ticket
-import imgBenefit from "../assets/img/ticket/benefit.jpg";
+import imgBenefit from "../assets/img/ticket/benefit.png";
 import imgStageMap from "../assets/img/ticket/stage-map.jpg";
 
 // vocal
@@ -35,24 +35,19 @@ export {
   audioKha,
   audioDaLab,
   audioUnpublic,
-
   imgAva20,
   imgAva22,
   imgAva23,
-
   imgBgContact,
   imgBgHistory,
   imgBgIntro,
   imgBgOrder,
   imgBgVocal,
   imgBgPopup,
-
   imgBrandContact,
-
   imgBenefit,
   imgStageMap,
-
   imgHoangDung,
   imgKha,
   imgUnpub,
-}
+};
