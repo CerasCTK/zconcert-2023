@@ -25,6 +25,7 @@ const fullNameInput = document.getElementById("fullName");
 const phoneNumberInput = document.getElementById("phoneNumber");
 const emailInput = document.getElementById("email");
 const facebookInput = document.getElementById("facebook");
+const knownFromInput = document.getElementById("kpi");
 
 // Ticket order
 const decBtn = document.querySelectorAll("button.dec-quan-btn");
@@ -151,7 +152,7 @@ const generateBankingInfo = () => {
   if (!phoneNumber) return "";
   if (!lotus && !jasmine && !iris) return "";
 
-  info += fullName + space + phoneNumber + space;
+  info += fullName + space + phoneNumber + space + "CK" + space;
 
   if (lotus !== 0) info += "L" + lotus + space;
   if (jasmine !== 0) info += "J" + jasmine + space;
@@ -212,6 +213,8 @@ orderTicketForm.addEventListener("submit", (event) => {
   const email = emailInput.value;
   const facebook = facebookInput.value;
 
+  const knownFrom = knownFromInput.value;
+
   const lotus = getNumOfTics(lotusInput);
   const jasmine = getNumOfTics(jasmineInput);
   const iris = getNumOfTics(irisInput);
@@ -232,7 +235,8 @@ orderTicketForm.addEventListener("submit", (event) => {
     jasmine,
     iris,
     total,
-    paymentMethod
+    paymentMethod,
+    knownFrom
   );
   writeToSheet(newRow, {}, registerSuccess, registerFailure);
 });
