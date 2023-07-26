@@ -1,7 +1,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const webpack = require("webpack");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   stats: "minimal",
@@ -104,11 +104,8 @@ module.exports = {
       minify: false,
       hash: false,
     }),
-    // new webpack.ProvidePlugin({
-    //   $: "jquery",
-    //   jQuery: "jquery",
-    //   "window.$": "jquery",
-    //   "window.jQuery": "jquery'",
-    // })
+    new CopyPlugin([
+      { from: "src/robots.txt", to: "robots.txt" }
+    ])
   ],
 };
