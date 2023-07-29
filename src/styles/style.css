@@ -924,6 +924,11 @@ input[type="submit"]:hover {
     padding-top: 1rem;
   }
 
+  /* Copyright */
+  .copyright-container {
+    padding: 1rem;
+  }
+
   /* Popup submit */
   #submit-loading,
   #submit-success,
