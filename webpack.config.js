@@ -104,8 +104,10 @@ module.exports = {
       minify: false,
       hash: false,
     }),
-    new CopyPlugin([
-      { from: "src/robots.txt", to: "robots.txt" }
-    ])
+    new CopyPlugin({
+      patterns: [
+        { from: "src/robots.txt", to: "robots.txt" },
+      ],
+    }),
   ],
 };
