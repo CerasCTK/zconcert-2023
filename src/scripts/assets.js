@@ -1,9 +1,10 @@
 //// audio
 import audioHoangDung from "../assets/audio/HoangDung.mp3";
 import audioKha from "../assets/audio/Kha.mp3";
-import audioDaLab from "../assets/audio/DaLAB.mp3";
 import audioGreyD from "../assets/audio/GreyD.mp3";
-import audioUnpublic from "../assets/audio/unpublic.mp3";
+import audioPhucDu from "../assets/audio/PhucDu.mp3";
+import audioKaiDinh from "../assets/audio/KaiDinh.mp3";
+import audioHuyenTamMon from "../assets/audio/HuyenTamMon.mp3";
 
 //// img
 // avatar-history
@@ -30,32 +31,33 @@ import imgStageMap from "../assets/img/ticket/stage-map.jpg";
 import imgHoangDung from "../assets/img/vocal/HoangDung.jpg";
 import imgKha from "../assets/img/vocal/Kha.jpg";
 import imgGreyD from "../assets/img/vocal/GreyD.jpg";
-import imgUnpub from "../assets/img/vocal/unpublic-vocal.jpg";
+import imgPhucDu from "../assets/img/vocal/PhucDu.jpg";
+import imgKaiDinh from "../assets/img/vocal/KaiDinh.jpg";
+import imgHuyenTamMon from "../assets/img/vocal/HuyenTamMon.jpg";
 
 export {
   audioHoangDung,
   audioKha,
   audioGreyD,
-  audioDaLab,
-  audioUnpublic,
-
+  audioPhucDu,
+  audioKaiDinh,
+  audioHuyenTamMon,
   imgAva20,
   imgAva22,
   imgAva23,
-
   imgBgContact,
   imgBgHistory,
   imgBgIntro,
   imgBgOrder,
   imgBgVocal,
   imgBgPopup,
-
   imgBrandContact,
   imgBenefit,
   imgStageMap,
-
   imgHoangDung,
   imgKha,
   imgGreyD,
-  imgUnpub,
+  imgPhucDu,
+  imgKaiDinh,
+  imgHuyenTamMon,
 };
