@@ -2,11 +2,11 @@ import { Popup } from "./utils/popup/popup-utils";
 import { createData, writeToSheet } from "./utils/google-sheet/google-sheet";
 
 // Ticket price
-const lotusPrice = {
-  single: 409000,
-  combo3: 399000,
-  combo5: 389000,
-};
+// const lotusPrice = { -- SOLD OUT --
+//   single: 409000,
+//   combo3: 399000,
+//   combo5: 389000,
+// };
 
 const jasminePrice = {
   single: 339000,
@@ -31,7 +31,7 @@ const knownFromInput = document.getElementById("kpi");
 const decBtn = document.querySelectorAll("button.dec-quan-btn");
 const incBtn = document.querySelectorAll("button.inc-quan-btn");
 
-const lotusInput = document.getElementById("lotusTickets");
+// const lotusInput = document.getElementById("lotusTickets"); -- SOLD OUT --
 const jasmineInput = document.getElementById("jasmineTickets");
 const irisInput = document.getElementById("irisTickets");
 
@@ -87,9 +87,9 @@ incBtn.forEach((btn) => {
 
 const updateQuantity = (ticket, handle) => {
   switch (ticket) {
-    case "lotus":
-      handle(lotusInput);
-      break;
+    // case "lotus":
+    //   handle(lotusInput);
+    //   break;
     case "jasmine":
       handle(jasmineInput);
       break;
@@ -116,16 +116,17 @@ const decrement = (ticketInput) => {
 };
 
 const calculateTotalPrice = () => {
-  const numOfLotus = getNumOfTics(lotusInput);
+  // const numOfLotus = getNumOfTics(lotusInput);
   const numOfJasmine = getNumOfTics(jasmineInput);
   const numOfIris = getNumOfTics(irisInput);
 
-  const totalLotusPrice = numOfLotus * getPerTicPrice(numOfLotus, lotusPrice);
+  // const totalLotusPrice = numOfLotus * getPerTicPrice(numOfLotus, lotusPrice);
   const totalJasminePrice =
     numOfJasmine * getPerTicPrice(numOfJasmine, jasminePrice);
   const totalIrisPrice = numOfIris * getPerTicPrice(numOfIris, irisPrice);
 
-  return totalLotusPrice + totalJasminePrice + totalIrisPrice;
+  // return totalLotusPrice + totalJasminePrice + totalIrisPrice;
+  return totalJasminePrice + totalIrisPrice;
 };
 
 const updateTotalPrice = () => {
@@ -144,17 +145,18 @@ const generateBankingInfo = () => {
   const fullName = fullNameInput.value;
   const phoneNumber = phoneNumberInput.value;
 
-  const lotus = getNumOfTics(lotusInput);
+  // const lotus = getNumOfTics(lotusInput);
   const jasmine = getNumOfTics(jasmineInput);
   const iris = getNumOfTics(irisInput);
 
   if (!fullName) return "";
   if (!phoneNumber) return "";
-  if (!lotus && !jasmine && !iris) return "";
+  // if (!lotus && !jasmine && !iris) return "";
+  if (!jasmine && !iris) return "";
 
   info += fullName + space + phoneNumber + space + "CK" + space;
 
-  if (lotus !== 0) info += "L" + lotus + space;
+  // if (lotus !== 0) info += "L" + lotus + space;
   if (jasmine !== 0) info += "J" + jasmine + space;
   if (iris !== 0) info += "I" + iris + space;
 
@@ -215,12 +217,13 @@ orderTicketForm.addEventListener("submit", (event) => {
 
   const knownFrom = knownFromInput.value;
 
-  const lotus = getNumOfTics(lotusInput);
+  // const lotus = getNumOfTics(lotusInput);
+  const lotus = 0;
   const jasmine = getNumOfTics(jasmineInput);
   const iris = getNumOfTics(irisInput);
   if (lotus === 0 && jasmine === 0 && iris === 0) return;
 
-  const total = calculateTotalPrice(lotus, jasmine, iris);
+  const total = calculateTotalPrice();
 
   const payment = document.querySelector('input[name="payment"]:checked');
   if (!payment) return;
