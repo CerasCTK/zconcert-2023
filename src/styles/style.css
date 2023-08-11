@@ -270,8 +270,27 @@
   height: 36rem;
 }
 
+/* Section Form Close */
+#form-close {
+  background-color: #f8f8f8;
+}
+.form-close-container {
+  text-align: center;
+  color: rgb(70, 40, 48);
+  padding: 10rem 0;
+}
+.form-close-container h2 {
+  font-family: montserrat-extrabold, sans-serif;
+  font-size: 2rem;
+  margin-top: 0;
+}
+.form-close-container a {
+  text-decoration: none;
+}
+
 /* Section Form */
 #form {
+  display: none;
   background-color: #f8f8f8;
   padding: 2.5rem 0;
 }
@@ -716,7 +735,6 @@ input[type="submit"]:hover {
 
 @media only screen and (max-width: 600px) {
   /* Navbar */
-
   .nav-list .left .nav-link {
     font-size: 1.5rem;
   }
@@ -860,6 +878,14 @@ input[type="submit"]:hover {
 
   #benefitContent img {
     height: 24rem;
+  }
+
+  /* Form-Close */
+  .form-close-container h2 {
+    font-size: 1.2rem;
+  }
+  .form-close-container i {
+    font-size: 0.8rem;
   }
 
   /* Form */
